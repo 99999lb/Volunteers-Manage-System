@@ -1,0 +1,18 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Volunteers Manage System:war exploded">
+    <output-path>D:/tomcat 9.0/apache-tomcat-9.0.54/webapps/VMS</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="Volunteers Manage System/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Volunteers Manage System" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/jsp-api.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/servlet-api.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/mysql-connector-java-5.1.27.jar" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
