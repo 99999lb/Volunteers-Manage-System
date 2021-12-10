@@ -6,7 +6,18 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ee6a3ba-35fb-46c5-84e4-3de993c578b0" name="默认的" comment="" />
+    <list default="true" id="6ee6a3ba-35fb-46c5-84e4-3de993c578b0" name="默认的" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/vms/Servlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/vms/Servlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/draft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/draft.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/ALogin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/ALogin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/CLogin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/CLogin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/vms/Servlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/vms/Servlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/draft.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/draft.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,10 +27,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -29,10 +43,14 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectId" id="21xGAXF15Laes1NAYcArYCNis8u" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="添加" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/WEB-INF/lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../exm7-4" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -72,11 +90,12 @@
       </method>
     </configuration>
     <configuration name="Tomcat 9.0.54" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.54" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/WEB-INF/Login.jsp" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="Volunteers Manage System:war exploded">
           <settings>
-            <option name="CONTEXT_PATH" value="/Servlet" />
+            <option name="CONTEXT_PATH" value="/WEB-INF" />
           </settings>
         </artifact>
       </deployment>
@@ -164,6 +183,8 @@
       <option name="presentableId" value="Default" />
       <updated>1638875182012</updated>
       <workItem from="1638875186071" duration="3413000" />
+      <workItem from="1639126781551" duration="5902000" />
+      <workItem from="1639132856432" duration="152000" />
     </task>
     <servers />
   </component>
@@ -175,10 +196,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/vms/Servlet.java</url>
-          <line>9</line>
+          <line>12</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Volunteers_Manage_System$Tomcat_9_0_54.ic" NAME="Tomcat 9.0.54 Coverage Results" MODIFIED="1639128213296" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
