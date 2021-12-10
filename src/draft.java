@@ -1,4 +1,4 @@
-import Dao.AccountDao;
+import dao.AccountDao;
 
 import java.sql.*;
 import java.util.Scanner;

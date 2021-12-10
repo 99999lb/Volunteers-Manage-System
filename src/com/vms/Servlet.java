@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
-import Dao.*;
+import dao.AccountDao;
 
 @WebServlet(name="servelt",urlPatterns = "/servlet")
 public class Servlet extends HttpServlet {
