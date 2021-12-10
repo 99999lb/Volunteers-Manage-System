@@ -8,17 +8,17 @@ public class Customer {
     private String phone;
     private String pass;
     private String csort;
-    private String pwd;
+    private String cpwd;
     public Customer(){}
     public Customer(String cid,String cname,String sex,String sig,
-                    String phone,String pwd)
+                    String phone,String cpwd)
     {
         this.cid=cid;
         this.cname=cname;
         this.sex=sex;
         this.sig=sig;
         this.phone=phone;
-        this.pwd=pwd;
+        this.cpwd=cpwd;
     }
     public String getCid() {
         return cid;
@@ -76,11 +76,11 @@ public class Customer {
         this.csort = csort;
     }
 
-    public String getPwd() {
-        return pwd;
+    public String getCpwd() {
+        return cpwd;
     }
 
-    public void setPwd(String pwd) {
-        this.pwd = pwd;
+    public void setCpwd(String cpwd) {
+        this.cpwd = cpwd;
     }
 }

@@ -11,15 +11,15 @@
     <title>Title</title>
 </head>
 <body>
-    <form name="register" method="post" action="servelt">
+    <form name="cregister" method="post" action="servelt">
         <table border="1" align="center">
             <tr>
                 <td>用户名</td>
-                <td><input type="text" name="id"></td>
+                <td><input type="text" name="cid"></td>
             </tr>
             <tr>
                 <td>姓名</td>
-                <td><input type="text" name="name"></td>
+                <td><input type="text" name="cname"></td>
             </tr>
             <tr>
                 <td>性别</td>
@@ -35,7 +35,7 @@
             </tr>
             <tr>
                 <td>密码</td>
-                <td><input type="text" name="pwd"></td>
+                <td><input type="text" name="cpwd"></td>
             </tr>
             <tr>
                 <td><input type="submit" value="提交"></td>

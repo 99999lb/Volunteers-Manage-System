@@ -24,8 +24,8 @@ public class AccountDao {
         return flag;
     }
 
-    public void addCustomer(String id,String name,String phone){
-        String sql="insert into customers values('"+id+"','"+name+"','"+phone+"')";
+    public void addCustomer(String cid,String cname,String sex,String sig,String phone,String cpwd){
+        String sql="insert into customers values('"+cid+"','"+cname+"','"+sex+"','"+sig+"','"+phone+"','"+cpwd+"')";
         SQLHelper.executeUpdate(sql);
     }
 }

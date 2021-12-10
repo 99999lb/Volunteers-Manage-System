@@ -63,6 +63,15 @@ public class Servlet extends HttpServlet {
                 else
                     response.sendRedirect("ALogin.jsp?errora=yes");
                 break;
+
+            case "cregister":
+                String cid=request.getParameter("cid");
+                String cname=request.getParameter("cname");
+                String sex=request.getParameter("sex");
+                String sig=request.getParameter("sig");
+                String phone=request.getParameter("phone");
+                String cpwd=request.getParameter("cpwd");
+
         }
     }
 
