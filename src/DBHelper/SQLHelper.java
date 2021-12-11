@@ -7,7 +7,7 @@ import java.sql.Statement;
 
 public class SQLHelper {
     private static String driver="com.microsoft.sqlserver.jdbc.SQLServerDriver";
-    private static String url="jdbc:sqlserver://localhost:1433; DatabaseName=ts";
+    private static String url="jdbc:sqlserver://localhost:1433; DatabaseName=vss";
     private static String user="sa",pwd="123456";
     private static Connection con;
 

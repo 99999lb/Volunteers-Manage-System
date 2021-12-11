@@ -16,7 +16,6 @@ public class Servlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String name=request.getParameter("name");
-
         switch (name){
             case "al":
                 response.sendRedirect("ALogin.jsp");
@@ -71,7 +70,9 @@ public class Servlet extends HttpServlet {
                 String sig=request.getParameter("sig");
                 String phone=request.getParameter("phone");
                 String cpwd=request.getParameter("cpwd");
-
+                ad.addCustomer(cid,cname,sex,sig,phone,cpwd);
+                response.sendRedirect("CLogin.jsp");
+                break;
         }
     }
 

@@ -34,5 +34,6 @@
     <orderEntry type="library" name="jsp-api" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Tomcat 9.0.54" level="application_server_libraries" />
     <orderEntry type="library" name="sqljdbc42" level="project" />
+    <orderEntry type="library" name="lib" level="project" />
   </component>
 </module>

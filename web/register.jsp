@@ -11,13 +11,14 @@
     <title>Title</title>
 </head>
 <body>
-    <form name="cregister" method="post" action="servelt">
+    <form method="post" action="servelt">
+        <input type="hidden" name="name" value="cregister">
         <table border="1" align="center">
             <tr>
                 <td>用户名</td>
                 <td><input type="text" name="cid"></td>
             </tr>
-            <tr>
+            <tr>0
                 <td>姓名</td>
                 <td><input type="text" name="cname"></td>
             </tr>
