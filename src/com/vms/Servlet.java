@@ -65,13 +65,27 @@ public class Servlet extends HttpServlet {
 
             case "cregister":
                 String cid=request.getParameter("cid");
-                String cname=request.getParameter("cname");
-                String sex=request.getParameter("sex");
-                String sig=request.getParameter("sig");
-                String phone=request.getParameter("phone");
                 String cpwd=request.getParameter("cpwd");
-                ad.addCustomer(cid,cname,sex,sig,phone,cpwd);
-                response.sendRedirect("CLogin.jsp");
+                String cc=request.getParameter("cc");
+                boolean rf=false;
+
+                if(!cc.equals(cpwd)){
+                    response.sendRedirect("register.jsp?errorR=y1");
+                }
+
+                else {
+                    try {
+                        rf=ad.addCustomer(cid,cpwd);
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+
+                    if(rf){
+                        response.sendRedirect("CLogin.jsp?errorc=regis");
+                    }
+                    else
+                        response.sendRedirect("register.jsp?errorR=y2");
+                }
                 break;
         }
     }

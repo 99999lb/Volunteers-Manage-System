@@ -1,1 +1,35 @@
 12.10--完成管理员和普通用户的账号登录检测功能
+
+触发器：
+ if exists(select name from sysobjects where name='cif_del' and type='TR')
+ drop trigger cif_del
+ go
+
+create trigger cif_del
+ on Customer
+ after delete
+as
+ declare @id char(8)
+ select @id=CID
+ from deleted
+
+delete from CInfo
+
+where CID=@id
+go
+
+ if exists(select name from sysobjects where name='cif_ins' and type='TR')
+ drop trigger cif_ins
+ go
+
+create trigger cif_ins
+ on Customer
+ after insert
+as
+ declare @id char(8)
+ select @id=CID
+ from inserted
+
+ insert into CInfo(CID,Pass,Csort)
+ values(@id,'Y','P')
+go

@@ -7,7 +7,7 @@ import java.sql.Statement;
 
 public class SQLHelper {
     private static String driver="com.microsoft.sqlserver.jdbc.SQLServerDriver";
-    private static String url="jdbc:sqlserver://localhost:1433; DatabaseName=vss";
+    private static String url="jdbc:sqlserver://localhost:1433; DatabaseName=ts";
     private static String user="sa",pwd="123456";
     private static Connection con;
 
@@ -19,15 +19,17 @@ public class SQLHelper {
         }
     }
 
-    public static void executeUpdate(String sql){//增删改
+    public static int executeUpdate(String sql){//增删改
+        int rs=0;
         try {
             con=DriverManager.getConnection(url,user,pwd);
             Statement cmd=con.createStatement();
-            cmd.executeUpdate(sql);
+            rs=cmd.executeUpdate(sql);
             con.close();
         }catch (Exception e){
             e.printStackTrace();
         }
+        return rs;
     }
 
     public static ResultSet executeQuery(String sql){//查询

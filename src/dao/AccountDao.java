@@ -24,10 +24,11 @@ public class AccountDao {
         return flag;
     }
 
-    public void addCustomer(String cid,String cname,String sex,String sig,String phone,String cpwd){
-        String sql1="insert into Cinfo values('"+cid+"','"+cname+"','"+sex+"','"+sig+"','"+phone+"')";
-        SQLHelper.executeUpdate(sql1);
-        String sql2="insert into Customer values('"+cid+"','"+cpwd+"')";
-        SQLHelper.executeUpdate(sql2);
+    public Boolean addCustomer(String cid,String cpwd) throws SQLException {
+        Boolean flag=false;
+        int rs=SQLHelper.executeUpdate("insert into Customer values('"+cid+"','"+cpwd+"')");
+        if (rs!=0)
+            flag=true;
+        return flag;
     }
 }
