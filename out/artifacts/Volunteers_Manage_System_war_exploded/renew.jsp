@@ -1,4 +1,5 @@
-<%--
+<%@ page import="dao.CustomerDao" %>
+<%@ page import="entity.Customer" %><%--
   Created by IntelliJ IDEA.
   User: Kuroen
   Date: 2021/12/12
@@ -11,7 +12,16 @@
     <title>更新个人信息</title>
 </head>
 <body>
+<%
+    String cid= (String) request.getSession().getAttribute("id");//此时用户名已经存储在了session中，在需要用户名的时候使用这句话
+    if(cid!=null){
+        CustomerDao dao=new CustomerDao();
+        Customer c=dao.queryCustomerByID(cid);
+        pageContext.setAttribute("cus",c);
+    }
+%>
 <form method="post" action="servelt">
+    <input type="hidden" name="name" value="cinfo">
     <table border="1" align="center">
         <tr>
             <td>姓名</td>

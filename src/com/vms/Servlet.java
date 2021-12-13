@@ -5,14 +5,18 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
 
 import dao.AccountDao;
+import dao.CustomerDao;
+import entity.Customer;
 
 @WebServlet(name="servelt",urlPatterns = "/servlet")
 public class Servlet extends HttpServlet {
     AccountDao ad=new AccountDao();
+    CustomerDao c=new CustomerDao();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String name=request.getParameter("name");
@@ -39,10 +43,11 @@ public class Servlet extends HttpServlet {
 
                 if(flag){
                     //传入个人信息，跳转到主页
-                    response.sendRedirect("CLogin.jsp?errorc=no");//仅作为测试用例，非最终验证结果
+                    request.getSession().setAttribute("id",id);
+                    response.sendRedirect("customer.jsp");//仅作为测试用例，非最终验证结果
                 }
-                else
-                    response.sendRedirect("CLogin.jsp?errorc=yes");
+
+
                 break;
 
             case "alogin":
@@ -86,6 +91,20 @@ public class Servlet extends HttpServlet {
                     else
                         response.sendRedirect("register.jsp?errorR=y2");
                 }
+
+                break;
+            case "cinfo":
+                response.sendRedirect("cInfo.jsp");
+                break;
+            case "vact":
+                break;
+            case "vpost":
+
+                break;
+            case "fact":
+                break;
+            case "updatecinfo":
+                response.sendRedirect("renew.jsp");
                 break;
         }
     }
