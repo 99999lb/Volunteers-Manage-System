@@ -1,24 +1,30 @@
 package entity;
 
+import dao.CustomerDao;
+
+import java.util.Objects;
+
 public class Customer {
     private String cid;
     private String cname;
     private String sex;
     private String sig;
     private String phone;
+    private String address;
     private String pass;
     private String csort;
     private String cpwd;
     public Customer(){}
-    public Customer(String cid,String cname,String sex,String sig,
-                    String phone,String cpwd)
-    {
+    public Customer(String cid,String cname,String sex,String sig,String phone,String address,
+                    String pass,String csort){
         this.cid=cid;
         this.cname=cname;
         this.sex=sex;
         this.sig=sig;
         this.phone=phone;
-        this.cpwd=cpwd;
+        this.address=address;
+        this.pass=pass;
+        this.csort=csort;
     }
     public String getCid() {
         return cid;
@@ -60,6 +66,14 @@ public class Customer {
         this.phone = phone;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     public String getPass() {
         return pass;
     }
@@ -83,4 +97,6 @@ public class Customer {
     public void setCpwd(String cpwd) {
         this.cpwd = cpwd;
     }
+
+
 }

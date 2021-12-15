@@ -1,6 +1,9 @@
 import dao.AccountDao;
+import dao.CustomerDao;
+import entity.Customer;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class draft {
@@ -11,10 +14,14 @@ public class draft {
         Connection con=DriverManager.getConnection(url,"sa","123456");
         System.out.println(con);
 
-        AccountDao d=new AccountDao();
-        Boolean t1=d.CheckAdmin(new Scanner(System.in).next(),new Scanner(System.in).next());
-        System.out.println(t1);
-        Boolean t2=d.CheckCustomer(new Scanner(System.in).next(),new Scanner(System.in).next());
-        System.out.println(t2);
+        CustomerDao d=new CustomerDao();
+        ArrayList<Customer> list=d.queryCustomerByPass();
+        Customer c=new Customer();
+        System.out.println(list.size());
+        for(int i=0;i<list.size();i++){
+            c=list.get(i);
+            System.out.println(c.getCid()+" "+c.getCname()+" "+c.getSex()+" "+c.getPhone()+" "
+                    +c.getSig()+" "+c.getAddress()+" "+c.getPass()+" "+c.getCsort());
+        }
     }
 }
