@@ -1,9 +1,5 @@
 package entity;
 
-import dao.CustomerDao;
-
-import java.util.Objects;
-
 public class Customer {
     private String cid;
     private String cname;

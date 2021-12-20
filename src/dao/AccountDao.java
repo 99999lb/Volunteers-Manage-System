@@ -1,9 +1,9 @@
 package dao;
 
+import DBHelper.SQLHelper;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
-import DBHelper.SQLHelper;
 
 public class AccountDao {
     public Boolean CheckAdmin(String id,String pwd) throws SQLException {

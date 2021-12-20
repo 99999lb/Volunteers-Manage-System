@@ -10,7 +10,7 @@
 <head>
     <title>
         <%
-            String id= (String) request.getSession().getAttribute("id");
+            String id= (String) request.getSession().getAttribute("cid");
             out.print("欢迎用户"+id);
         %>
     </title>

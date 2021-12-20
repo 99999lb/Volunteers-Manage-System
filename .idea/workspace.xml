@@ -6,26 +6,39 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ee6a3ba-35fb-46c5-84e4-3de993c578b0" name="默认的" comment="默认的">
-      <change afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dao/CustomerDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/entity/Post.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/cInfo.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/customer.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/post.jsp" afterDir="false" />
+    <list default="true" id="6ee6a3ba-35fb-46c5-84e4-3de993c578b0" name="默认的" comment="基本实现了个人信息cInfo的页面，但是更新还没有做完，希望能告诉我哪里不对，我想自己改&#10;CustomerDao里面更新方法还没用到过，增加了通过id查找，根据表判断类型和审核情况这三个方法&#10;Servlet中 cinfo对应个人信息 vact对应可以参加的活动，vpost发帖 fact 完成的活动 updatecinfo修改个人信息">
+      <change afterPath="$PROJECT_DIR$/src/dao/ActivityDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/entity/Activity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/ActSub.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/actInfo.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/admin.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/sign.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/ALogin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/ALogin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/CLogin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/CLogin.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/WEB-INF/classes/DBHelper/SQLHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/WEB-INF/classes/DBHelper/SQLHelper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/WEB-INF/classes/com/vms/Servlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/WEB-INF/classes/com/vms/Servlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/WEB-INF/classes/draft.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/WEB-INF/classes/draft.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/WEB-INF/classes/entity/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/WEB-INF/classes/entity/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/renew.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/renew.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DBHelper/SQLHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBHelper/SQLHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/vms/Servlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/vms/Servlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/AccountDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/AccountDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/CustomerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/CustomerDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/draft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/draft.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entity/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/ALogin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/ALogin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/CLogin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/CLogin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/DBHelper/SQLHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/DBHelper/SQLHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/META-INF/Volunteers Manage System.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/vms/Servlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/vms/Servlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/draft.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/draft.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/entity/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/entity/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/cInfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/cInfo.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/customer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/customer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/register.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/renew.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/renew.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -86,23 +99,29 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.17838542" />
     <property name="project.structure.side.proportion" value="0.16052319" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\27721\Desktop\VolunteerServiceSystem\dsj\Volunteers-Manage-System\web" />
+      <recent name="C:\Users\27721\Desktop\VolunteerServiceSystem\dsj\Volunteers-Manage-System\src\entity" />
+      <recent name="C:\Users\27721\Desktop\VolunteerServiceSystem\dsj\Volunteers-Manage-System\src\dao" />
       <recent name="D:\IdeaP\javaee\Volunteers Manage System\web\WEB-INF\lib" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="DBHelper" />
+      <recent name="com.vms" />
+      <recent name="entity" />
+      <recent name="dao" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.54">
@@ -116,17 +135,6 @@
     <configuration name="draft" type="Application" factoryName="应用程序" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="draft" />
       <module name="Volunteers Manage System" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -205,8 +213,8 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Tomcat Server.Tomcat 9.0.54" />
       <item itemvalue="Application.draft" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.54" />
     </list>
     <recent_temporary>
       <list>
@@ -235,7 +243,15 @@
       <workItem from="1639288235070" duration="17000" />
       <workItem from="1639366372682" duration="2985000" />
       <workItem from="1639371568369" duration="4431000" />
-      <workItem from="1639376211505" duration="16656000" />
+      <workItem from="1639376211505" duration="16709000" />
+      <workItem from="1639445450094" duration="3544000" />
+      <workItem from="1639816978091" duration="35000" />
+      <workItem from="1639818854419" duration="1474000" />
+      <workItem from="1639820716644" duration="472000" />
+      <workItem from="1639904467159" duration="274000" />
+      <workItem from="1639904756807" duration="642000" />
+      <workItem from="1639905420003" duration="2459000" />
+      <workItem from="1639964183104" duration="2709000" />
     </task>
     <task id="LOCAL-00001" summary="默认的">
       <created>1639148789271</created>
@@ -258,7 +274,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639181850133</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="基本实现了个人信息cInfo的页面，但是更新还没有做完，希望能告诉我哪里不对，我想自己改&#10;CustomerDao里面更新方法还没用到过，增加了通过id查找，根据表判断类型和审核情况这三个方法&#10;Servlet中 cinfo对应个人信息 vact对应可以参加的活动，vpost发帖 fact 完成的活动 updatecinfo修改个人信息">
+      <created>1639393919037</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1639393919038</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -278,7 +301,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="默认的" />
-    <option name="LAST_COMMIT_MESSAGE" value="默认的" />
+    <MESSAGE value="基本实现了个人信息cInfo的页面，但是更新还没有做完，希望能告诉我哪里不对，我想自己改&#10;CustomerDao里面更新方法还没用到过，增加了通过id查找，根据表判断类型和审核情况这三个方法&#10;Servlet中 cinfo对应个人信息 vact对应可以参加的活动，vpost发帖 fact 完成的活动 updatecinfo修改个人信息" />
+    <option name="LAST_COMMIT_MESSAGE" value="基本实现了个人信息cInfo的页面，但是更新还没有做完，希望能告诉我哪里不对，我想自己改&#10;CustomerDao里面更新方法还没用到过，增加了通过id查找，根据表判断类型和审核情况这三个方法&#10;Servlet中 cinfo对应个人信息 vact对应可以参加的活动，vpost发帖 fact 完成的活动 updatecinfo修改个人信息" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Volunteers_Manage_System$Tomcat_9_0_54.ic" NAME="Tomcat 9.0.54 Coverage Results" MODIFIED="1639128213296" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
