@@ -6,7 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ee6a3ba-35fb-46c5-84e4-3de993c578b0" name="默认的" comment="基本实现了个人信息cInfo的页面，但是更新还没有做完，希望能告诉我哪里不对，我想自己改&#10;CustomerDao里面更新方法还没用到过，增加了通过id查找，根据表判断类型和审核情况这三个方法&#10;Servlet中 cinfo对应个人信息 vact对应可以参加的活动，vpost发帖 fact 完成的活动 updatecinfo修改个人信息">
+    <list default="true" id="6ee6a3ba-35fb-46c5-84e4-3de993c578b0" name="默认的" comment="1220">
       <change afterPath="$PROJECT_DIR$/src/dao/ActivityDao.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/entity/Activity.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/web/ActSub.jsp" afterDir="false" />
@@ -251,7 +251,7 @@
       <workItem from="1639904467159" duration="274000" />
       <workItem from="1639904756807" duration="642000" />
       <workItem from="1639905420003" duration="2459000" />
-      <workItem from="1639964183104" duration="2709000" />
+      <workItem from="1639964183104" duration="3025000" />
     </task>
     <task id="LOCAL-00001" summary="默认的">
       <created>1639148789271</created>
@@ -281,7 +281,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639393919038</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="1220">
+      <created>1639967225538</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1639967225538</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -302,7 +309,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="默认的" />
     <MESSAGE value="基本实现了个人信息cInfo的页面，但是更新还没有做完，希望能告诉我哪里不对，我想自己改&#10;CustomerDao里面更新方法还没用到过，增加了通过id查找，根据表判断类型和审核情况这三个方法&#10;Servlet中 cinfo对应个人信息 vact对应可以参加的活动，vpost发帖 fact 完成的活动 updatecinfo修改个人信息" />
-    <option name="LAST_COMMIT_MESSAGE" value="基本实现了个人信息cInfo的页面，但是更新还没有做完，希望能告诉我哪里不对，我想自己改&#10;CustomerDao里面更新方法还没用到过，增加了通过id查找，根据表判断类型和审核情况这三个方法&#10;Servlet中 cinfo对应个人信息 vact对应可以参加的活动，vpost发帖 fact 完成的活动 updatecinfo修改个人信息" />
+    <MESSAGE value="1220" />
+    <option name="LAST_COMMIT_MESSAGE" value="1220" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Volunteers_Manage_System$Tomcat_9_0_54.ic" NAME="Tomcat 9.0.54 Coverage Results" MODIFIED="1639128213296" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
