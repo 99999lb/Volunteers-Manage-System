@@ -11,4 +11,20 @@
         <servlet-name>servelt</servlet-name>
         <url-pattern>/servelt</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>netServlet</servlet-name>
+        <servlet-class>com.vms.netServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>netServlet</servlet-name>
+        <url-pattern>/netServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>download</servlet-name>
+        <servlet-class>com.vms.downloadServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>download</servlet-name>
+        <url-pattern>/download</url-pattern>
+    </servlet-mapping>
 </web-app>

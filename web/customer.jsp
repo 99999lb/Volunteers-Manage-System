@@ -43,6 +43,7 @@
             pageContext.setAttribute("sort",sort);
         }
     %>
+    <a href="main.jsp">回主界面</a>
     <form method="post" action="servelt">
         <input type="hidden" name="name" value="cinfo">
         <table border="0" align="center" title="用户个人信息">

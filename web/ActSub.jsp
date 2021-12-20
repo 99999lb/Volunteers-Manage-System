@@ -11,7 +11,7 @@
     <title>发布活动</title>
 </head>
 <body>
-<form action="servelt" method="post">
+<form action="servlet" method="post">
     <table border="1" align="center">
         <tr><td style="width: 350px;height: 80px"><h1 style="color: lightgray;" align="center">发布志愿者活动</h1></td></tr>
     </table>

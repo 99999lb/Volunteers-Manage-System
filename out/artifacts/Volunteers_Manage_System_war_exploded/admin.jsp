@@ -30,7 +30,8 @@
 </head>
 <body>
 
-<form name="admin" method="post" action="servelt">
+<form name="admin" method="post" action="servlet">
+    <a href="main.jsp">回主界面</a>
     <table border="0" align="center">
         <tr>
             <td>管理员id:</td>
@@ -54,8 +55,8 @@
                     out.println("<td>"+c.getPhone()+"</td>");
                     out.println("<td>"+c.getAddress()+"</td>");
                     out.println("<td>"+c.getCsort()+"</td>");
-                    out.println("<td><a href='servelt?name=passp&pid="+c.getCid()+"'>审核通过</a>"+"  "
-                    +"<a href='servelt?name=errorp&pid="+c.getCid()+"'>审核不通过</a></td>");
+                    out.println("<td><a href='servlet?name=passp&pid="+c.getCid()+"'>审核通过</a>"+"  "
+                    +"<a href='servlet?name=errorp&pid="+c.getCid()+"'>审核不通过</a></td>");
                     out.println("</tr>");
                 }
             }
@@ -68,9 +69,9 @@
     </table>
     <br>
     <h3 align="center" style="color: lightgray">待审核帖子信息</h3>
-    <table border="1" align="center">
+    <table border="0" align="center">
         <tr>
-            <td colspan="2" align="center"><a href="servelt?name=returnlogin">退出登录</a></td>
+            <td colspan="2" align="center"><a href="servlet?name=returnlogin">退出登录</a></td>
         </tr>
     </table>
 </form>

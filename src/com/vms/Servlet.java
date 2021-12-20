@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-@WebServlet(name="servelt",urlPatterns = "/servlet")
+@WebServlet(name="servlet",urlPatterns = "/servlet")
 public class Servlet extends HttpServlet {
     AccountDao ad=new AccountDao();
     CustomerDao c=new CustomerDao();
@@ -69,10 +69,12 @@ public class Servlet extends HttpServlet {
 
                 break;
 
-            case "returnlogin"://退出账号并回到登录界面
-                request.getSession().removeAttribute("cid");
-                request.getSession().removeAttribute("aid");
-                response.sendRedirect("Login.jsp");
+            case "returnlogin"://退出账号并回到主界面
+                if(request.getSession().getAttribute("cid")!=null)
+                    request.getSession().removeAttribute("cid");
+                if(request.getSession().getAttribute("aid")!=null)
+                    request.getSession().removeAttribute("aid");
+                response.sendRedirect("main.jsp");
                 break;
 
 
