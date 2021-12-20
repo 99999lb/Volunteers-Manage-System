@@ -80,7 +80,6 @@
             <tr>
                 <td colspan="2" align="center"><a href="servelt?name=updatecinfo">修改个人信息</a></td>
             </tr>
-
         </table>
     </form>
 </body>

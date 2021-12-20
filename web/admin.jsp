@@ -15,11 +15,18 @@
             String id= (String) request.getSession().getAttribute("aid");
             out.print("欢迎管理员"+id);
             pageContext.setAttribute("id",id);
-
-
-            ArrayList<Customer> list= (ArrayList<Customer>) session.getAttribute("list");
         %>
     </title>
+    <script>
+        var passp='<%=request.getParameter("passp")%>';
+        if(passp=="yes")
+            alert("审核用户信息成功！数据库已更新！")
+        else if(passp=="no")
+            alert("审核用户信息失败！请稍后重试")
+    </script>
+    <%
+        ArrayList<Customer> list= (ArrayList<Customer>) session.getAttribute("list");
+    %>
 </head>
 <body>
 
@@ -47,7 +54,8 @@
                     out.println("<td>"+c.getPhone()+"</td>");
                     out.println("<td>"+c.getAddress()+"</td>");
                     out.println("<td>"+c.getCsort()+"</td>");
-                    out.println("<td><a href='servlet?name=checkpass'>审核通过</a></td>");
+                    out.println("<td><a href='servelt?name=passp&pid="+c.getCid()+"'>审核通过</a>"+"  "
+                    +"<a href='servelt?name=errorp&pid="+c.getCid()+"'>审核不通过</a></td>");
                     out.println("</tr>");
                 }
             }
@@ -56,11 +64,14 @@
     </table>
     <br>
     <h3 align="center" style="color: brown">待审核志愿者活动信息</h3>
-    <table>
+    <table border="1" align="center">
     </table>
     <br>
     <h3 align="center" style="color: lightgray">待审核帖子信息</h3>
-    <table>
+    <table border="1" align="center">
+        <tr>
+            <td colspan="2" align="center"><a href="servelt?name=returnlogin">退出登录</a></td>
+        </tr>
     </table>
 </form>
 </body>

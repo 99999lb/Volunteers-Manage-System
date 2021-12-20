@@ -20,6 +20,7 @@ public class CustomerDao {
         return flag;
     }
 
+    //通过用户id查找用户信息
     public Customer queryCustomerByID(String cid){
         Customer cus=null;
         String sql="select * from CInfo where CID='"+cid+"'";
@@ -33,11 +34,11 @@ public class CustomerDao {
         return cus;
     }
 
-    public ArrayList queryCustomerByPass(){//仅测试查询结果，未修改sql语句！！！
+    public ArrayList queryCustomerByPass(){
         ArrayList<Customer> list =new ArrayList<>();
 
         Customer cus=null;
-        String sql="select * from CInfo where Pass='\"+\"N\"+\"'";// where Pass='"+"N"+"'
+        String sql="select * from CInfo where Pass='N'";
         ResultSet rs=SQLHelper.executeQuery(sql);
         try{
             while (rs.next()){
@@ -48,6 +49,24 @@ public class CustomerDao {
         }catch(Exception e){}
 
         return list;
+    }
+
+    public boolean passIDMessage(String id){
+        Boolean flag=false;
+        int rs= SQLHelper.executeUpdate("UPDATE CInfo SET Pass='Y' where CID='"+id+"'");
+
+        if (rs!=0)
+            flag=true;
+        return flag;
+    }
+
+    public boolean noPassIDMessage(String id){
+        Boolean flag=false;
+        int rs= SQLHelper.executeUpdate("UPDATE CInfo SET Pass='E' where CID='"+id+"'");
+
+        if (rs!=0)
+            flag=true;
+        return flag;
     }
 
     public String checkSort(String s){
@@ -66,8 +85,12 @@ public class CustomerDao {
         if("Y".trim().equals(p)){
             result="正常";
         }
-        else{
-            result="待审核";
+        else if("N".trim().equals(p)){
+            result="信息修改已提交，待审核";
+        }
+        else if("E".trim().equals(p))
+        {
+            result="审核未通过！请修改信息后再次尝试";
         }
         return result;
     }

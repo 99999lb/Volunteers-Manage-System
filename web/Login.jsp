@@ -12,15 +12,15 @@
 </head>
 <body>
 <form name="login" method="post" action="servelt">
-    <table border="1" align="center">
-        <tr>
+    <table border="1" align="center" width="35%">
+        <tr align="center">
             <td>
-                <a href='servelt?name=al'>Admin Login</a>
+                <a href='servelt?name=al'>管理员登录</a>
             </td>
         </tr>
-        <tr>
+        <tr align="center">
             <td>
-                <a href='servelt?name=cl'>Customer Login</a>
+                <a href='servelt?name=cl'>普通用户登录</a>
             </td>
         </tr>
     </table>
