@@ -22,38 +22,10 @@ public class Servlet extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         String name=request.getParameter("name");
         switch (name){
-            case "al":
+            case "al"://登录方式选择
                 response.sendRedirect("ALogin.jsp");
                 break;
-            case "cl":
-                response.sendRedirect("CLogin.jsp");
-                break;
-            case "regis":
-                response.sendRedirect("register.jsp");
-                break;
-
-            case "clogin":
-                String id=request.getParameter("cn");
-                String pwd=request.getParameter("cp");
-                boolean flag= false;
-                try {
-                   flag = ad.CheckCustomer(id,pwd);
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-
-                if(flag){
-                    //传入个人信息，跳转到主页
-                    request.getSession().setAttribute("cid",id);
-                    response.sendRedirect("customer.jsp");
-                }
-                else
-                    response.sendRedirect("CLogin.jsp?errorc=yes");
-
-
-                break;
-
-            case "alogin":
+            case "alogin"://管理员登录验证
                 String aid=request.getParameter("an");
                 String apwd=request.getParameter("ap");
                 boolean aflag= false;
@@ -74,7 +46,65 @@ public class Servlet extends HttpServlet {
                     response.sendRedirect("ALogin.jsp?errora=yes");
                 break;
 
-            case "cregister":
+            case "cl":
+                response.sendRedirect("CLogin.jsp");
+                break;
+            case "clogin"://普通用户登录验证
+                String id=request.getParameter("cn");
+                String pwd=request.getParameter("cp");
+                boolean flag= false;
+                try {
+                    flag = ad.CheckCustomer(id,pwd);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+
+                if(flag){
+                    //传入个人信息，跳转到主页
+                    request.getSession().setAttribute("cid",id);
+                    response.sendRedirect("customer.jsp");
+                }
+                else
+                    response.sendRedirect("CLogin.jsp?errorc=yes");
+
+                break;
+
+            case "returnlogin"://退出账号并回到登录界面
+                request.getSession().removeAttribute("cid");
+                request.getSession().removeAttribute("aid");
+                response.sendRedirect("Login.jsp");
+                break;
+
+
+            case "passp"://审核通过（个人信息）
+                String pid1=request.getParameter("pid");
+                boolean pflag1=c.passIDMessage(pid1);
+                ArrayList<Customer> list=c.queryCustomerByPass();
+                request.getSession().setAttribute("list",list);
+
+                if(pflag1)
+                    response.sendRedirect("admin.jsp?passp=yes");
+                else
+                    response.sendRedirect("admin.jsp?passp=no");
+                break;
+
+            case "errorp"://审核不通过（个人信息）
+                String pid2=request.getParameter("pid");
+                boolean pflag2=c.noPassIDMessage(pid2);
+                list=c.queryCustomerByPass();
+                request.getSession().setAttribute("list",list);
+
+                if(pflag2)
+                    response.sendRedirect("admin.jsp?passp=yes");
+                else
+                    response.sendRedirect("admin.jsp?passp=no");
+                break;
+
+            case "regis":
+                response.sendRedirect("register.jsp");
+                break;
+
+            case "cregister"://用户注册（仅普通用户）
                 String cid=request.getParameter("cid");
                 String cpwd=request.getParameter("cpwd");
                 String cc=request.getParameter("cc");
@@ -99,7 +129,11 @@ public class Servlet extends HttpServlet {
                 }
                 break;
 
-            case "renew":
+            case "updatecinfo":
+                response.sendRedirect("renew.jsp");
+                break;
+
+            case "renew"://普通用户更新个人信息
                 String rid= (String) request.getSession().getAttribute("cid");
                 String rcn=request.getParameter("rcname");
                 String rs=request.getParameter("rsex");
@@ -121,34 +155,27 @@ public class Servlet extends HttpServlet {
                 }
 
                 if(ref)
-                    response.sendRedirect("cInfo.jsp?upd=true");
+                    response.sendRedirect("customer.jsp?upd=true");
                 else
                     response.sendRedirect("renew.jsp?upd=false");
 
                 break;
 
-            case "cinfo":
-                response.sendRedirect("cInfo.jsp");
-                break;
-
             case "vact":
                 response.sendRedirect("actInfo.jsp");
-                String peoNum=request.getParameter("peoNum");
-                if(Integer.parseInt(peoNum.trim())>0)
-                    response.sendRedirect("sign.jsp?aRep=true");
-                else
-                    response.sendRedirect("actInfo.jsp?aRep=false");
+                break;
+
+            case "vactmes":
+                response.sendRedirect("actMes.jsp");
                 break;
 
             case "vpost":
                 break;
 
             case "fact":
+                response.sendRedirect("acts.jsp");
                 break;
 
-            case "updatecinfo":
-                response.sendRedirect("renew.jsp");
-                break;
         }
     }
 
