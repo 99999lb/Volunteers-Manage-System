@@ -2,7 +2,9 @@ package com.vms;
 
 import dao.AccountDao;
 import dao.CustomerDao;
+import dao.PostDao;
 import entity.Customer;
+import entity.Post;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,6 +19,7 @@ import java.util.ArrayList;
 public class Servlet extends HttpServlet {
     AccountDao ad=new AccountDao();
     CustomerDao c=new CustomerDao();
+    PostDao pd=new PostDao();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
@@ -170,6 +173,20 @@ public class Servlet extends HttpServlet {
                 break;
 
             case "vpost":
+                String idofPost= (String) request.getSession().getAttribute("cid");
+                String cname=request.getParameter("cname");
+                String title=request.getParameter("title");
+                String tText=request.getParameter("tText");
+                boolean pr=false;
+                try {
+                    pr=pd.addPost(idofPost,cname,title,tText);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                if(pr)
+                    response.sendRedirect("post.jsp");
+                else
+                    response.sendRedirect("main.jsp");
                 break;
 
             case "fact":

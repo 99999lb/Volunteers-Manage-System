@@ -23,6 +23,7 @@ public class netServlet extends HttpServlet {
                 break;
 
             case "forum":
+                response.sendRedirect("post.jsp");
                 break;
 
             case "download":

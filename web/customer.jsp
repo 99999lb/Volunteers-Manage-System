@@ -91,11 +91,6 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="2" align="center">
-                    <a href='servelt?name=fact'>已完成活动</a>
-                </td>
-            </tr>
-            <tr>
                 <td colspan="2" align="center"><a href="servelt?name=returnlogin">退出登录</a></td>
             </tr>
         </table>
