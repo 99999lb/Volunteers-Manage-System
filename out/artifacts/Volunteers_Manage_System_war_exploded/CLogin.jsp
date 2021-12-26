@@ -18,6 +18,8 @@
         alert("登录成功！欢迎！")
     else if (error=="regis")
         alert("注册成功！欢迎登陆！")
+    else if(error=="nologin")
+        alert("请先登录！")
 </script>
 <body>
 <form method="post" action="servelt">

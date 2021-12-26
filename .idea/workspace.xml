@@ -6,22 +6,37 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ee6a3ba-35fb-46c5-84e4-3de993c578b0" name="默认的" comment="1220">
+    <list default="true" id="6ee6a3ba-35fb-46c5-84e4-3de993c578b0" name="默认的" comment="1221(1)">
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Volunteers Manage System.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Volunteers Manage System.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/ActSub.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/ActSub.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/CLogin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/CLogin.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/WEB-INF/classes/com/vms/Servlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/WEB-INF/classes/com/vms/Servlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/WEB-INF/classes/com/vms/netServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/WEB-INF/classes/com/vms/netServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/WEB-INF/classes/dao/ActivityDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/WEB-INF/classes/dao/ActivityDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/WEB-INF/classes/entity/Activity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/WEB-INF/classes/entity/Activity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/actInfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/actInfo.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/admin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/cInfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/cInfo.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/customer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/customer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/main.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/vms/Servlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/vms/Servlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/vms/downloadServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/vms/downloadServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/vms/netServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/vms/netServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/ActivityDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ActivityDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Activity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/ActSub.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/ActSub.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/CLogin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/CLogin.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/vms/Servlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/vms/Servlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/vms/netServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/vms/netServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/dao/ActivityDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/dao/ActivityDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/entity/Activity.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/entity/Activity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/actInfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/actInfo.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/customer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/customer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/main.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +85,7 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectId" id="21xGAXF15Laes1NAYcArYCNis8u" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="添加" />
   </component>
   <component name="ProjectViewState">
@@ -79,32 +94,42 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="sqlserver" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Volunteers-Manage-System-origin" />
+    <property name="last_opened_file_path" value="E:/学习/大三上/javaee/Volunteers-Manage-System-main" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17838542" />
     <property name="project.structure.side.proportion" value="0.16052319" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\学习\大三上\javaee\Volunteers-Manage-System-main\web" />
       <recent name="C:\Users\27721\Desktop\VolunteerServiceSystem\dsj\Volunteers-Manage-System\web" />
-      <recent name="C:\Users\27721\Desktop\VolunteerServiceSystem\dsj\Volunteers-Manage-System\src\entity" />
-      <recent name="C:\Users\27721\Desktop\VolunteerServiceSystem\dsj\Volunteers-Manage-System\src\dao" />
-      <recent name="D:\IdeaP\javaee\Volunteers Manage System\web\WEB-INF\lib" />
+      <recent name="C:\Users\27721\Desktop\VolunteerServiceSystem\dsj\Volunteers-Manage-System\web\WEB-INF" />
+      <recent name="C:\Users\27721\Desktop\VolunteerServiceSystem\dsj\Volunteers-Manage-System\web\WEB-INF\lib" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="DBHelper" />
       <recent name="com.vms" />
       <recent name="entity" />
       <recent name="dao" />
+      <recent name="DBHelper" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\学习\大三上\javaee\Volunteers-Manage-System-main\out\artifacts\Volunteers_Manage_System_war_exploded" />
+      <recent name="E:\学习\大三上\javaee\Volunteers-Manage-System-main\web" />
+      <recent name="E:\学习\大三上\javaee\Volunteers-Manage-System-main\web\WEB-INF" />
+      <recent name="C:\Users\27721\Desktop\VolunteerServiceSystem\dsj\Volunteers-Manage-System\web\WEB-INF\lib" />
+      <recent name="C:\Users\27721\Desktop\VolunteerServiceSystem\dsj\Volunteers-Manage-System\web" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -241,12 +266,24 @@
       <workItem from="1639904467159" duration="274000" />
       <workItem from="1639904756807" duration="642000" />
       <workItem from="1639905420003" duration="2459000" />
-      <workItem from="1639964183104" duration="3025000" />
-      <workItem from="1639967948855" duration="3669000" />
-      <workItem from="1639979103726" duration="2363000" />
-      <workItem from="1639981560843" duration="23000" />
-      <workItem from="1639983837201" duration="40000" />
-      <workItem from="1639988819387" duration="3515000" />
+      <workItem from="1639964183104" duration="3313000" />
+      <workItem from="1639967558582" duration="4648000" />
+      <workItem from="1639983376520" duration="860000" />
+      <workItem from="1639985149369" duration="6000" />
+      <workItem from="1639985234647" duration="871000" />
+      <workItem from="1639986145414" duration="19270000" />
+      <workItem from="1640047407901" duration="343000" />
+      <workItem from="1640050865377" duration="75000" />
+      <workItem from="1640050954623" duration="1551000" />
+      <workItem from="1640058412676" duration="25000" />
+      <workItem from="1640077255617" duration="352000" />
+      <workItem from="1640079223297" duration="13126000" />
+      <workItem from="1640166544287" duration="358000" />
+      <workItem from="1640245634155" duration="17094000" />
+      <workItem from="1640362225950" duration="3107000" />
+      <workItem from="1640485430622" duration="2541000" />
+      <workItem from="1640488106306" duration="605000" />
+      <workItem from="1640488745964" duration="21000" />
     </task>
     <task id="LOCAL-00001" summary="默认的">
       <created>1639148789271</created>
@@ -283,7 +320,21 @@
       <option name="project" value="LOCAL" />
       <updated>1639967225538</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="1220">
+      <created>1639967262184</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1639967262184</updated>
+    </task>
+    <task id="LOCAL-00007" summary="1221(1)">
+      <created>1640077562762</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1640077562762</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -303,10 +354,14 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
     <MESSAGE value="默认的" />
     <MESSAGE value="基本实现了个人信息cInfo的页面，但是更新还没有做完，希望能告诉我哪里不对，我想自己改&#10;CustomerDao里面更新方法还没用到过，增加了通过id查找，根据表判断类型和审核情况这三个方法&#10;Servlet中 cinfo对应个人信息 vact对应可以参加的活动，vpost发帖 fact 完成的活动 updatecinfo修改个人信息" />
     <MESSAGE value="1220" />
-    <option name="LAST_COMMIT_MESSAGE" value="1220" />
+    <MESSAGE value="1221(1)" />
+    <option name="LAST_COMMIT_MESSAGE" value="1221(1)" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Volunteers_Manage_System$Tomcat_9_0_54.ic" NAME="Tomcat 9.0.54 Coverage Results" MODIFIED="1639128213296" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

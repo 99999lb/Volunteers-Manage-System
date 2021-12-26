@@ -13,7 +13,6 @@
 <head>
     <title>活动信息</title>
     <%
-        String id= (String) request.getSession().getAttribute("actID");
         ActivityDao ad=new ActivityDao();
         ArrayList<Activity> alist=ad.queryActivityByPass();
     %>
@@ -24,7 +23,7 @@
         alert("报名人数已满！")
 </script>
 <body>
-<form name="vact" method="post" action="servlet">
+<form name="vact" method="post" action="servelt">
     <table border="1" align="center">
         <thead><tr><th>活动号</th><th style="width:200px">活动名</th><th>类别</th><th>地点</th>
             <th>活动开始时间</th><th>活动结束时间</th><th>招募开始时间</th><th>招募结束时间</th>

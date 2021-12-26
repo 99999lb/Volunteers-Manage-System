@@ -1,7 +1,10 @@
 package com.vms;
 
 import dao.AccountDao;
+import dao.ActivityDao;
 import dao.CustomerDao;
+import dao.PostDao;
+import entity.Activity;
 import entity.Customer;
 
 import javax.servlet.ServletException;
@@ -13,10 +16,12 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-@WebServlet(name="servlet",urlPatterns = "/servlet")
+@WebServlet(name="servelt",urlPatterns = "/servlet")
 public class Servlet extends HttpServlet {
     AccountDao ad=new AccountDao();
     CustomerDao c=new CustomerDao();
+    ActivityDao actd=new ActivityDao();
+    PostDao pd=new PostDao();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
@@ -38,8 +43,10 @@ public class Servlet extends HttpServlet {
                 if(aflag){
                     //传入个人信息，跳转到主页
                     request.getSession().setAttribute("aid",aid);
-                    ArrayList<Customer> list=c.queryCustomerByPass();
-                    request.getSession().setAttribute("list",list);
+                    ArrayList<Customer> clist=c.queryCustomerByPass();
+                    request.getSession().setAttribute("clist",clist);
+                    ArrayList<Activity> alist=actd.queryActivityByPass();
+                    request.getSession().setAttribute("alist",alist);
                     response.sendRedirect("admin.jsp");//仅作为测试用例，非最终验证结果
                 }
                 else
@@ -70,8 +77,11 @@ public class Servlet extends HttpServlet {
                 break;
 
             case "returnlogin"://退出账号并回到主界面
-                if(request.getSession().getAttribute("cid")!=null)
+                if(request.getSession().getAttribute("cid")!=null) {
                     request.getSession().removeAttribute("cid");
+                    request.getSession().removeAttribute("pass");
+                    request.getSession().removeAttribute("sort");
+                }
                 if(request.getSession().getAttribute("aid")!=null)
                     request.getSession().removeAttribute("aid");
                 response.sendRedirect("main.jsp");
@@ -81,8 +91,8 @@ public class Servlet extends HttpServlet {
             case "passp"://审核通过（个人信息）
                 String pid1=request.getParameter("pid");
                 boolean pflag1=c.passIDMessage(pid1);
-                ArrayList<Customer> list=c.queryCustomerByPass();
-                request.getSession().setAttribute("list",list);
+                ArrayList<Customer> clist=c.queryCustomerByPass();
+                request.getSession().setAttribute("clist",clist);
 
                 if(pflag1)
                     response.sendRedirect("admin.jsp?passp=yes");
@@ -92,8 +102,8 @@ public class Servlet extends HttpServlet {
             case "errorp"://审核不通过（个人信息）
                 String pid2=request.getParameter("pid");
                 boolean pflag2=c.noPassIDMessage(pid2);
-                list=c.queryCustomerByPass();
-                request.getSession().setAttribute("list",list);
+                clist=c.queryCustomerByPass();
+                request.getSession().setAttribute("clist",clist);
 
                 if(pflag2)
                     response.sendRedirect("admin.jsp?passp=yes");
@@ -104,6 +114,7 @@ public class Servlet extends HttpServlet {
             case "regis":
                 response.sendRedirect("register.jsp");
                 break;
+
             case "cregister"://用户注册（仅普通用户）
                 String cid=request.getParameter("cid");
                 String cpwd=request.getParameter("cpwd");
@@ -132,6 +143,7 @@ public class Servlet extends HttpServlet {
             case "updatecinfo":
                 response.sendRedirect("renew.jsp");
                 break;
+
             case "renew"://普通用户更新个人信息
                 String rid= (String) request.getSession().getAttribute("cid");
                 String rcn=request.getParameter("rcname");
@@ -162,17 +174,31 @@ public class Servlet extends HttpServlet {
 
             case "vact":
                 response.sendRedirect("actInfo.jsp");
-                String peoNum=request.getParameter("peoNum");
-                if(Integer.parseInt(peoNum.trim())>0)
-                    response.sendRedirect("sign.jsp?aRep=true");
-                else
-                    response.sendRedirect("actInfo.jsp?aRep=false");
+                break;
+
+            case "vactmes":
+                response.sendRedirect("actMes.jsp");
                 break;
 
             case "vpost":
+                String idofPost= (String) request.getSession().getAttribute("cid");
+                String cname=request.getParameter("cname");
+                String title=request.getParameter("title");
+                String tText=request.getParameter("tText");
+                boolean pr=false;
+                try {
+                    pr=pd.addPost(idofPost,cname,title,tText);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                if(pr)
+                    response.sendRedirect("post.jsp");
+                else
+                    response.sendRedirect("main.jsp");
                 break;
 
             case "fact":
+                response.sendRedirect("joinacts.jsp");
                 break;
 
         }

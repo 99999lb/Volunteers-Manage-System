@@ -9,6 +9,7 @@
         <webroots>
           <root url="file://$MODULE_DIR$/web" relative="/" />
         </webroots>
+        <sourceRoots />
       </configuration>
     </facet>
   </component>
@@ -35,5 +36,6 @@
     <orderEntry type="library" scope="PROVIDED" name="Tomcat 9.0.54" level="application_server_libraries" />
     <orderEntry type="library" name="sqljdbc42" level="project" />
     <orderEntry type="library" name="lib" level="project" />
+    <orderEntry type="library" name="weblib" level="project" />
   </component>
 </module>

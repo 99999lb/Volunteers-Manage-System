@@ -41,12 +41,17 @@
             pageContext.setAttribute("cus",c);
             pageContext.setAttribute("pass",pass);
             pageContext.setAttribute("sort",sort);
+            request.getSession().setAttribute("pass",c.getPass());
+            request.getSession().setAttribute("sort",c.getCsort());
         }
     %>
-    <a href="main.jsp">回主界面</a>
     <form method="post" action="servelt">
         <input type="hidden" name="name" value="cinfo">
-        <table border="0" align="center" title="用户个人信息">
+        <a href="main.jsp">回主界面</a>
+        <table border="1" align="center">
+            <tr><td style="width: 350px;height: 80px"><h1 style="color: powderblue;" align="center">用户主页</h1></td></tr>
+        </table>
+        <table border="0" align="center">
             <tr>
                 <td>id</td>
                 <td><input type="text" name="cid" value="${cus.cid}" readonly="readonly"></td>
@@ -76,14 +81,11 @@
                 <td><input type="text" name="csort" value="${sort}" readonly="readonly"></td>
             </tr>
             <tr>
-                <td>个人信息状态</td><td><input type="text" name="pass" style="width: 300px;height: 50px" value="${pass}" readonly="readonly"></td>
-            </tr>
-            <tr>
-                <td colspan="2" align="center"><a href="servelt?name=updatecinfo">修改个人信息</a></td>
+                <td>个人信息状态</td><td><input type="text" name="pass" style="width: 300px;height: 50px" value="${pass}" readonly="readonly"><a href="servelt?name=updatecinfo">修改个人信息</a></td>
             </tr>
             <tr>
                 <td colspan="2" align="center">
-                    <a href='servelt?name=vact'>参与的活动</a>
+                    <a href='servelt?name=vactmes'>参与的活动</a>
                 </td>
             </tr>
             <tr>
