@@ -21,12 +21,21 @@
         alert("活动创建成功！请等待审核！")
     else if(error=="admin")
         alert("管理员账户不可创建志愿者活动！请切换为个体账户后重试！")
+
+    var ja='<%=request.getParameter("ja")%>';
+    if(ja=="adm" || ja=="c")
+        alert("仅个体用户才能参加志愿者活动！")
+    else if(ja=="y")
+        alert("活动参加成功！请注意活动开始时间！")
+    else if(ja=="n")
+        alert("活动参加失败！请稍后重试！")
 </script>
 <%
     ArrayList<Activity> passalist= (ArrayList<Activity>) request.getSession().getAttribute("passalist");
 %>
 <body>
 <form action="netServlet" method="post">
+    <a href="main.jsp">回主界面</a>
     <table border="0" align="center">
         <tr><td><a href="netServlet?name=creatact">创建新的志愿者活动</a></td></tr>
     </table>
@@ -55,7 +64,7 @@
                     out.println("<td>"+a.getDuration()+"</td>");
                     out.println("<td>"+a.getPeoNum()+"</td>");
                     out.println("<td>"+a.getActBrif()+"</td>");
-                    out.println("<td><a href='netServlet?name=join&pdaid="+a.getActID()+"'>参加活动</a></td>");
+                    out.println("<td><a href='netServlet?name=join&jaid="+a.getActID()+"'>参加活动</a></td>");
                     out.println("</tr>");
                 }
             }

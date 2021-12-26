@@ -1,11 +1,9 @@
 package com.vms;
 
-import dao.AccountDao;
-import dao.ActivityDao;
-import dao.CustomerDao;
-import dao.PostDao;
+import dao.*;
 import entity.Activity;
 import entity.Customer;
+import entity.JoinActs;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,10 +20,13 @@ public class Servlet extends HttpServlet {
     CustomerDao c=new CustomerDao();
     ActivityDao actd=new ActivityDao();
     PostDao pd=new PostDao();
+    JoinActsDao jd=new JoinActsDao();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         String name=request.getParameter("name");
+        String sort= (String) request.getSession().getAttribute("sort");
+
         switch (name){
             case "al"://登录方式选择
                 response.sendRedirect("ALogin.jsp");
@@ -197,6 +198,9 @@ public class Servlet extends HttpServlet {
                 break;
 
             case "joinacts":
+                cid=(String) request.getSession().getAttribute("cid");
+                ArrayList<JoinActs> joinbyid=jd.JoinActivitiesByID(cid);
+                request.getSession().setAttribute("joinbyid",joinbyid);
                 response.sendRedirect("joinacts.jsp");
                 break;
 

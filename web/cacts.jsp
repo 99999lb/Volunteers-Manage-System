@@ -64,8 +64,18 @@
                         break;
                 }
                 out.println("<td>"+pass+"</td>");
-                out.println("<td>未开放</td>");
-                out.println("<td><a href='servelt?name=deletea&daid="+a.getActID()+"'>删除活动</td>");
+                switch (flag.trim()){
+                    case "Y":
+                        out.println("<td><a href='servelt?name=fina&finaid="+a.getActID()+"'>活动结束</a></td>");
+                        break;
+                    case "N":
+                        out.println("<td>未开放</td>");
+                        break;
+                    case "E":
+                        out.println("<td>未开放</td>");
+                        break;
+                }
+                out.println("<td><a href='servelt?name=deletea&daid="+a.getActID()+"'>删除活动</a></td>");
                 out.println("</tr>");
             }
         }

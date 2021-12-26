@@ -1,9 +1,7 @@
 package dao;
 
 import DBHelper.SQLHelper;
-import entity.ActMes;
 import entity.Activity;
-import entity.Acts;
 
 import java.sql.ResultSet;
 import java.sql.Timestamp;
@@ -35,7 +33,7 @@ public class ActivityDao {
         ArrayList<Activity> list =new ArrayList<>();
 
         Activity act=null;
-        String sql="select * from ActInfo where Pass='Y'";
+        String sql="select * from ActInfo,ActCreate where ActInfo.ActID=ActCreate.ActID and fin='N'";
         ResultSet rs= SQLHelper.executeQuery(sql);
         try{
             while (rs.next()){
