@@ -24,6 +24,10 @@
             alert("审核用户信息成功！数据库已更新！")
         else if(passp=="no")
             alert("审核用户信息失败！请稍后重试")
+        else if(passp=="yesa")
+            alert("审核志愿活动信息成功！数据库已更新！")
+        else if(passp=="noa")
+            alert("审核志愿活动信息失败！请稍后重试")
     </script>
     <%
         ArrayList<Customer> clist= (ArrayList<Customer>) session.getAttribute("clist");
@@ -31,7 +35,6 @@
     %>
 </head>
 <body>
-
 <form name="admin" method="post" action="servelt">
     <a href="main.jsp">回主界面</a>
     <table border="1" align="center">

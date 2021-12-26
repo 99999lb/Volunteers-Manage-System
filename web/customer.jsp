@@ -85,7 +85,14 @@
             </tr>
             <tr>
                 <td colspan="2" align="center">
-                    <a href='servelt?name=vactmes'>参与的活动</a>
+                    <%
+                        String s= (String) request.getSession().getAttribute("sort");
+//                        System.out.println(s);
+                        if(s.trim().equals("C"))
+                            out.println("<a href='servelt?name=cacts'>创建的活动</a>");
+                        else
+                            out.println("<a href='servelt?name=joinacts'>参与的活动</a>");
+                    %>
                 </td>
             </tr>
             <tr>

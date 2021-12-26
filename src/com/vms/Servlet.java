@@ -111,6 +111,30 @@ public class Servlet extends HttpServlet {
                     response.sendRedirect("admin.jsp?passp=no");
                 break;
 
+            case "passa"://审核通过（活动信息）
+                String actid1=request.getParameter("paid");
+                boolean actflag1=actd.passACTMessage(actid1);
+                ArrayList<Activity> alist=actd.queryActivityByPass();
+                request.getSession().setAttribute("alist",alist);
+
+                if(actflag1)
+                    response.sendRedirect("admin.jsp?passp=yesa");
+                else
+                    response.sendRedirect("admin.jsp?passp=noa");
+                break;
+            case "errorpa"://审核不通过（活动信息）
+                String actid2=request.getParameter("paid");
+                boolean actflag2=actd.noPassACTMessage(actid2);
+                alist=actd.queryActivityByPass();
+                request.getSession().setAttribute("alist",alist);
+
+                if(actflag2)
+                    response.sendRedirect("admin.jsp?passp=yesa");
+                else
+                    response.sendRedirect("admin.jsp?passp=noa");
+                break;
+
+
             case "regis":
                 response.sendRedirect("register.jsp");
                 break;
@@ -170,6 +194,30 @@ public class Servlet extends HttpServlet {
                 else
                     response.sendRedirect("renew.jsp?upd=false");
 
+                break;
+
+            case "joinacts":
+                response.sendRedirect("joinacts.jsp");
+                break;
+
+            case "cacts":
+                String CID= (String) request.getSession().getAttribute("cid");
+                ArrayList<Activity> actsbyid=actd.FindActivitiesByCID(CID);
+                request.getSession().setAttribute("actsbyid",actsbyid);
+                response.sendRedirect("cacts.jsp");
+                break;
+
+            case "deletea":
+                String daid=request.getParameter("daid");
+                Boolean df=actd.DeleteActByID(daid);
+                CID= (String) request.getSession().getAttribute("cid");
+                actsbyid=actd.FindActivitiesByCID(CID);
+                request.getSession().setAttribute("actsbyid",actsbyid);
+
+                if(df)
+                    response.sendRedirect("cacts.jsp?da=y");
+                else
+                    response.sendRedirect("cacts.jsp?da=n");
                 break;
 
             case "vact":
