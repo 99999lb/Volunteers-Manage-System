@@ -1,5 +1,6 @@
 <%@ page import="entity.Activity" %>
-<%@ page import="java.util.ArrayList" %><%--
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="dao.JoinActsDao" %><%--
   Created by IntelliJ IDEA.
   User: Kuroen
   Date: 2021/12/26
@@ -24,6 +25,7 @@
             alert("活动删除失败！请之后重试！")
     </script>
     <%
+        JoinActsDao jad=new JoinActsDao();
         ArrayList<Activity> alist= (ArrayList<Activity>) session.getAttribute("actsbyid");
     %>
 </head>
@@ -31,7 +33,7 @@
 <table border="1" align="center">
     <thead><tr><th>活动号</th><th style="width: 100px">活动名</th><th>活动类别</th>
         <th style="width: 80px">活动地点</th><th style="width: 100px">活动开始时间</th><th style="width: 100px">活动结束时间</th>
-        <th style="width: 100px">招募开始时间</th><th style="width: 100px">招募结束时间</th><th>活动持续时间</th><th>所需人数</th>
+        <th style="width: 100px">招募开始时间</th><th style="width: 100px">招募结束时间</th><th>活动持续时间</th><th>所需人数</th><th>现有人数</th>
         <th style="width: 200px">活动描述</th><th>审核</th><th>活动状态</th><th>操作</th></tr>
     </thead>
     <tbody>
@@ -49,6 +51,7 @@
                 out.println("<td>"+a.getrEndTime()+"</td>");
                 out.println("<td>"+a.getDuration()+"</td>");
                 out.println("<td>"+a.getPeoNum()+"</td>");
+                out.println("<td>"+jad.JoinCountByID(a.getActID())+"</td>");
                 out.println("<td>"+a.getActBrif()+"</td>");
                 String pass="";
                 String flag=a.getPass();

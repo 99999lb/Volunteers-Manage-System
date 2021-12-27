@@ -89,7 +89,7 @@ public class netServlet extends HttpServlet {
             case "join":
                 cusid= (String) request.getSession().getAttribute("cid");
                 String jaid=request.getParameter("jaid");
-                System.out.println(jaid);
+                int jnum= Integer.parseInt(request.getParameter("jnum"));
                 aid= (String) request.getSession().getAttribute("aid");
                 flag=false;
 
@@ -102,19 +102,39 @@ public class netServlet extends HttpServlet {
                         if(sort.trim().equals("C"))
                             response.sendRedirect("acts.jsp?ja=c");
                         else {
-                            try {
-                                flag=jad.JoinAct(cusid,jaid);
-                            } catch (SQLException e) {
-                                e.printStackTrace();
-                            }
+                            if(jnum>jad.JoinCountByID(jaid)){
 
-                            if(flag)
-                                response.sendRedirect("acts.jsp?ja=y");
+                                try {
+                                    flag=jad.JoinAct(cusid,jaid);
+                                } catch (SQLException e) {
+                                    e.printStackTrace();
+                                }
+
+                                if(flag)
+                                    response.sendRedirect("acts.jsp?ja=y");
+                                else
+                                    response.sendRedirect("acts.jsp?ja=n");
+                            }
                             else
-                                response.sendRedirect("acts.jsp?ja=n");
+                                response.sendRedirect("CLogin.jsp?errorc=surpass");
                         }
                     }
                 }
+                break;
+            case "quit":
+                cusid= (String) request.getSession().getAttribute("cid");
+                String qaid=request.getParameter("qaid");
+                flag=false;
+
+                try {
+                    flag=jad.QuitAct(cusid,qaid);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                if(flag)
+                    response.sendRedirect("acts.jsp?ja=qy");
+                else
+                    response.sendRedirect("acts.jsp?ja=qn");
                 break;
 
             case "news":

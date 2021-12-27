@@ -1,5 +1,8 @@
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="entity.Activity" %><%--
+<%@ page import="entity.Activity" %>
+<%@ page import="dao.ActivityDao" %>
+<%@ page import="entity.JoinNum" %>
+<%@ page import="dao.JoinActsDao" %><%--
   Created by IntelliJ IDEA.
   User: Kuroen
   Date: 2021/12/21
@@ -21,6 +24,8 @@
         alert("活动创建成功！请等待审核！")
     else if(error=="admin")
         alert("管理员账户不可创建志愿者活动！请切换为个体账户后重试！")
+    else if(error=="surpass")
+        alert("加入活动失败！当前志愿者活动已满员")
 
     var ja='<%=request.getParameter("ja")%>';
     if(ja=="adm" || ja=="c")
@@ -29,9 +34,18 @@
         alert("活动参加成功！请注意活动开始时间！")
     else if(ja=="n")
         alert("活动参加失败！请稍后重试！")
+    else if(ja=="qy")
+        alert("活动退出成功！")
+    else if(ja=="qn")
+        alert("活动退出失败！请稍后重试！")
 </script>
 <%
     ArrayList<Activity> passalist= (ArrayList<Activity>) request.getSession().getAttribute("passalist");
+    String cid= (String) request.getSession().getAttribute("cid");
+%>
+<%
+    JoinActsDao jad=new JoinActsDao();
+    ArrayList<JoinNum> jlist=jad.AllJoinActivities();
 %>
 <body>
 <form action="netServlet" method="post">
@@ -44,7 +58,7 @@
     <table border="1" align="center">
         <thead><tr><th>账号名</th><th>活动号</th><th style="width: 100px">活动名</th><th>活动类别</th>
             <th style="width: 80px">活动地点</th><th style="width: 100px">活动开始时间</th><th style="width: 100px">活动结束时间</th>
-            <th style="width: 100px">招募开始时间</th><th style="width: 100px">招募结束时间</th><th>活动持续时间</th><th>所需人数</th>
+            <th style="width: 100px">招募开始时间</th><th style="width: 100px">招募结束时间</th><th>活动持续时间</th><th>所需人数</th><th>现有人数</th>
             <th style="width: 200px">活动描述</th><th>操作</th></tr>
         </thead>
         <tbody>
@@ -63,8 +77,22 @@
                     out.println("<td>"+a.getrEndTime()+"</td>");
                     out.println("<td>"+a.getDuration()+"</td>");
                     out.println("<td>"+a.getPeoNum()+"</td>");
+                    out.println("<td>"+jad.JoinCountByID(a.getActID())+"</td>");
                     out.println("<td>"+a.getActBrif()+"</td>");
-                    out.println("<td><a href='netServlet?name=join&jaid="+a.getActID()+"'>参加活动</a></td>");
+
+                    int flag=0;
+                    if(!jlist.isEmpty()){
+                        for (JoinNum j:jlist){
+                            if(a.getActID().trim().equals(j.getActid()) && cid!=null
+                                    && cid.trim().equals(j.getJcid().trim())){
+                                flag=1;break;
+                            }
+                        }
+                    }
+                    if (flag == 1)
+                        out.println("<td><a href='netServlet?name=quit&qaid="+ a.getActID() + "'>退出活动</a></td>");
+                    else
+                        out.println("<td><a href='netServlet?name=join&jnum="+a.getPeoNum()+"&jaid="+a.getActID()+"'>参加活动</a></td>");
                     out.println("</tr>");
                 }
             }

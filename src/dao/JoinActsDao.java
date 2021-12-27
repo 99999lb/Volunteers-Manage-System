@@ -3,6 +3,7 @@ package dao;
 import DBHelper.SQLHelper;
 import entity.Activity;
 import entity.JoinActs;
+import entity.JoinNum;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,6 +13,14 @@ public class JoinActsDao {
     public Boolean JoinAct(String cid,String actid) throws SQLException {
         Boolean flag=false;
         int rs= SQLHelper.executeUpdate("insert into ActJoin values('"+actid+"','"+cid+"','N','')");
+        if (rs!=0)
+            flag=true;
+        return flag;
+    }
+
+    public Boolean QuitAct(String cid,String actid) throws SQLException {
+        Boolean flag=false;
+        int rs= SQLHelper.executeUpdate("delete from ActJoin where ActId='"+actid+"' and CID='"+cid+"'");
         if (rs!=0)
             flag=true;
         return flag;
@@ -32,5 +41,35 @@ public class JoinActsDao {
         }catch(Exception e){}
 
         return list;
+    }
+
+    public ArrayList<JoinNum> AllJoinActivities(){
+        ArrayList<JoinNum> list =new ArrayList<>();
+
+        JoinNum act=null;
+        String sql="select * from ActJoin";
+        ResultSet rs= SQLHelper.executeQuery(sql);
+        try{
+            while (rs.next()){
+                act=new JoinNum(rs.getString(1),rs.getString(2));
+                list.add(act);
+            }
+        }catch(Exception e){}
+
+        return list;
+    }
+
+    public int JoinCountByID(String aid){
+        int num=0;
+
+        String sql="select * from ActJoin where AcTID='"+aid+"'";
+        ResultSet rs= SQLHelper.executeQuery(sql);
+        try{
+            while (rs.next()){
+                num++;
+            }
+        }catch(Exception e){}
+
+        return num;
     }
 }

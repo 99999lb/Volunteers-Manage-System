@@ -49,7 +49,15 @@
         <input type="hidden" name="name" value="cinfo">
         <a href="main.jsp">回主界面</a>
         <table border="1" align="center">
-            <tr><td style="width: 350px;height: 80px"><h1 style="color: powderblue;" align="center">用户主页</h1></td></tr>
+            <tr><td style="width: 350px;height: 80px">
+                <%
+                    String s= (String) request.getSession().getAttribute("sort");
+                    if(s.trim().equals("C"))
+                        out.println("<h1 style='color: sandybrown;' align='center'>团队志愿者用户主页</h1>");
+                    else
+                        out.println("<h1 style='color: powderblue;' align='center'>个人志愿者用户主页</h1>");
+                %>
+            </td></tr>
         </table>
         <table border="0" align="center">
             <tr>
@@ -86,8 +94,6 @@
             <tr>
                 <td colspan="2" align="center">
                     <%
-                        String s= (String) request.getSession().getAttribute("sort");
-//                        System.out.println(s);
                         if(s.trim().equals("C"))
                             out.println("<a href='servelt?name=cacts'>创建的活动</a>");
                         else
