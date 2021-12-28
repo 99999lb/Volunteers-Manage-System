@@ -33,3 +33,51 @@ as
  insert into CInfo(CID,Pass,Csort)
  values(@id,'Y','P')
 go
+
+ if exists(select name from sysobjects where name='cact_del' and type='TR')
+ drop trigger cact_del
+ go
+
+create trigger cact_del
+ on ActInfo
+ after delete
+as
+ declare @aid char(8)
+ select @aid=ActID
+ from deleted
+
+ delete from ActCreate where ActID=@aid
+
+go
+
+ if exists(select name from sysobjects where name='joinact_del' and type='TR')
+ drop trigger joinact_del
+ go
+
+create trigger joinact_del
+ on ActInfo
+ after delete
+as
+ declare @aid char(8)
+ select @aid=ActID
+ from deleted
+
+ delete from ActJoin where ActID=@aid
+
+go
+
+ if exists(select name from sysobjects where name='finact_upd' and type='TR')
+ drop trigger finact_upd
+ go
+
+create trigger finact_upd
+ on ActCreate
+ after update
+as
+ declare @aid char(12)
+ select @aid=ActID
+ from inserted
+
+ update ActJoin set fin='Y' where AcTID=@aid
+
+go

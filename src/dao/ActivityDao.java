@@ -4,6 +4,7 @@ import DBHelper.SQLHelper;
 import entity.Activity;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -45,6 +46,28 @@ public class ActivityDao {
         }catch(Exception e){}
 
         return list;
+    }
+
+    public boolean FinAct(String aid){
+        Boolean flag=false;
+        int rs= SQLHelper.executeUpdate("UPDATE ActCreate SET fin='Y' where ActID='"+aid+"'");
+
+        if (rs!=0)
+            flag=true;
+        return flag;
+    }
+
+    public boolean CheckFinAct(String aid) throws SQLException {
+        Boolean flag=false;
+        ResultSet rs= SQLHelper.executeQuery("select fin from ActInfo,ActCreate where ActInfo.ActID=ActCreate.ActID and ActCreate.ActID='"+aid+"'");
+
+        while (rs.next()){
+            String fin=rs.getString(1);
+            System.out.println(fin.trim().equals("Y"));
+            if(fin.trim().equals("Y"))
+                flag=true;
+        }
+        return flag;
     }
 
     public ArrayList<Activity> FindActivitiesByCID(String cid){

@@ -21,6 +21,7 @@
     var upd='<%=request.getParameter("upd")%>'
     if(upd=="true")
         alert("信息更新成功！请等待审核！")
+
 </script>
 <body>
     <%
@@ -104,11 +105,6 @@
             <tr>
                 <td colspan="2" align="center">
                     <a href='servelt?name=vpost'>发布的帖子</a>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2" align="center">
-                    <a href='servelt?name=fact'>已完成活动</a>
                 </td>
             </tr>
             <tr>

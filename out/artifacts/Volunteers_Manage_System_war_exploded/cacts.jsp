@@ -1,6 +1,7 @@
 <%@ page import="entity.Activity" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="dao.JoinActsDao" %><%--
+<%@ page import="dao.JoinActsDao" %>
+<%@ page import="dao.ActivityDao" %><%--
   Created by IntelliJ IDEA.
   User: Kuroen
   Date: 2021/12/26
@@ -23,13 +24,19 @@
             alert("活动删除成功！")
         else if(da=="n")
             alert("活动删除失败！请之后重试！")
+        else if(da=="fy")
+            alert("活动完成！请通知组员评分！")
+        else if(da=="fn")
+            alert("更新活动状态失败！请之后重试！")
     </script>
     <%
         JoinActsDao jad=new JoinActsDao();
+        ActivityDao ad=new ActivityDao();
         ArrayList<Activity> alist= (ArrayList<Activity>) session.getAttribute("actsbyid");
     %>
 </head>
 <body>
+<a href="customer.jsp">回个人主页</a>
 <table border="1" align="center">
     <thead><tr><th>活动号</th><th style="width: 100px">活动名</th><th>活动类别</th>
         <th style="width: 80px">活动地点</th><th style="width: 100px">活动开始时间</th><th style="width: 100px">活动结束时间</th>
@@ -67,17 +74,23 @@
                         break;
                 }
                 out.println("<td>"+pass+"</td>");
-                switch (flag.trim()){
-                    case "Y":
-                        out.println("<td><a href='servelt?name=fina&finaid="+a.getActID()+"'>活动结束</a></td>");
-                        break;
-                    case "N":
-                        out.println("<td>未开放</td>");
-                        break;
-                    case "E":
-                        out.println("<td>未开放</td>");
-                        break;
+
+                Boolean fin=ad.CheckFinAct(a.getActID());
+                if(!fin){
+                    switch (flag.trim()){
+                        case "Y":
+                            out.println("<td><a href='servelt?name=fina&finaid="+a.getActID()+"'>活动结束</a></td>");
+                            break;
+                        case "N":
+                            out.println("<td>未开放</td>");
+                            break;
+                        case "E":
+                            out.println("<td>未开放</td>");
+                            break;
+                    }
                 }
+                else
+                    out.println("<td>活动已完成</td>");
                 out.println("<td><a href='servelt?name=deletea&daid="+a.getActID()+"'>删除活动</a></td>");
                 out.println("</tr>");
             }

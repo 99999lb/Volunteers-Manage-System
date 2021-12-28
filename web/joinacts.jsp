@@ -1,5 +1,4 @@
-<%@ page import="dao.ActivityDao" %>
-<%@ page import="entity.ActMes" %>
+
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="entity.JoinActs" %><%--
   Created by IntelliJ IDEA.
@@ -11,12 +10,21 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>已完成活动</title>
+    <title>已参与活动</title>
     <%
         ArrayList<JoinActs> list= (ArrayList<JoinActs>) request.getSession().getAttribute("joinbyid");
     %>
 </head>
+<script>
+    var err='<%=request.getParameter("pa")%>'
+    if(err=="y")
+        alert("活动评分成功！")
+    else if(err=="n")
+        alert("活动评分失败！请稍后再试！")
+
+</script>
 <body>
+<a href="customer.jsp">回个人主页</a>
 <form name="fact" method="post" action="servelt">
     <table border="1" align="center">
         <thead><tr><th>活动号</th><th>活动名</th><th>活动类别</th><th>活动地点</th>
@@ -43,14 +51,19 @@
                         break;
                 }
                 out.println("<td>"+a.getApoint()+"</td>");
-                switch (flag.trim()){
-                    case "Y":
-                        out.println("<td><a href='servelt?name=point&ptaid="+a.getActID()+"'>评分</a></td>");
-                        break;
-                    case "N":
-                        out.println("<td>评分未开放</td>");
-                        break;
+                Float p= Float.valueOf(a.getApoint());
+                if(p==0){
+                    switch (flag.trim()){
+                        case "Y":
+                            out.println("<td><a href='servelt?name=point&ptaid="+a.getActID()+"'>评分</a></td>");
+                            break;
+                        case "N":
+                            out.println("<td>评分未开放</td>");
+                            break;
+                    }
                 }
+                else
+                    out.println("<td>评分完成</td>");
                 out.println("</tr>");
             }
         %>

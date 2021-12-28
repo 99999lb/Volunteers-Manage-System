@@ -204,11 +204,53 @@ public class Servlet extends HttpServlet {
                 response.sendRedirect("joinacts.jsp");
                 break;
 
+            case "point":
+                cid=(String) request.getSession().getAttribute("cid");
+                String actid=request.getParameter("ptaid");
+                joinbyid=jd.ActivitiPoint(cid,actid);
+                request.getSession().setAttribute("pointact",joinbyid);
+                response.sendRedirect("point.jsp");
+                break;
+
+            case "pa":
+                cid=(String) request.getSession().getAttribute("cid");
+                actid= (String) request.getSession().getAttribute("ptaid");
+                Float p= Float.valueOf(request.getParameter("pointact"));
+                flag=false;
+
+                try {
+                    flag=jd.PointAct(cid,actid,p);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+
+                if(flag) {
+                    response.sendRedirect("joinacts.jsp?pa=y");
+                    joinbyid=jd.JoinActivitiesByID(cid);
+                    request.getSession().setAttribute("joinbyid",joinbyid);
+                }
+                else
+                    response.sendRedirect("joinacts.jsp?pa=n");
+
+                request.getSession().removeAttribute("ptaid");
+                break;
+
             case "cacts":
                 String CID= (String) request.getSession().getAttribute("cid");
                 ArrayList<Activity> actsbyid=actd.FindActivitiesByCID(CID);
                 request.getSession().setAttribute("actsbyid",actsbyid);
                 response.sendRedirect("cacts.jsp");
+                break;
+
+
+            case "fina":
+                String faid=request.getParameter("finaid");
+                flag=actd.FinAct(faid);
+
+                if(flag)
+                    response.sendRedirect("cacts.jsp?da=fy");
+                else
+                    response.sendRedirect("renew.jsp?da=fn");
                 break;
 
             case "deletea":
@@ -228,10 +270,6 @@ public class Servlet extends HttpServlet {
                 response.sendRedirect("actInfo.jsp");
                 break;
 
-            case "vactmes":
-                response.sendRedirect("actMes.jsp");
-                break;
-
             case "vpost":
                 String idofPost= (String) request.getSession().getAttribute("cid");
                 String cname=request.getParameter("cname");
@@ -249,9 +287,6 @@ public class Servlet extends HttpServlet {
                     response.sendRedirect("main.jsp");
                 break;
 
-            case "fact":
-                response.sendRedirect("joinacts.jsp");
-                break;
 
         }
     }
