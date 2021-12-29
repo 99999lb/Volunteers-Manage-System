@@ -6,16 +6,16 @@ public class Post {
     private String title;
     private String tText;
     private String pass;
-    private int TID;
+    private int tid;
     public Post(){}
-    public Post(String cid,String cname,
-                String title,String tText){
+    public Post(String cid,String cname,String title,String tText,String pass,int tid){
         this.cid=cid;
         this.cname=cname;
         this.title=title;
         this.tText=tText;
+        this.pass=pass;
+        this.tid=tid;
     }
-
 
     public String getCid() {
         return cid;
@@ -57,11 +57,11 @@ public class Post {
         this.pass = pass;
     }
 
-    public int getTID() {
-        return TID;
+    public int getTid() {
+        return tid;
     }
 
-    public void setTID(int TID) {
-        this.TID = TID;
+    public void setTid(int tid) {
+        this.tid = tid;
     }
 }

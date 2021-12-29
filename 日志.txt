@@ -33,3 +33,5 @@ as
  insert into CInfo(CID,Pass,Csort)
  values(@id,'Y','P')
 go
+
+2021.12.29 大致完成帖子部分

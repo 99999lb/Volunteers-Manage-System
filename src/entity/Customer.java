@@ -11,6 +11,10 @@ public class Customer {
     private String csort;
     private String cpwd;
     public Customer(){}
+    public Customer(String cid,String cname){
+        this.cid=cid;
+        this.cname=cname;
+    }
     public Customer(String cid,String cname,String sex,String sig,String phone,String address,
                     String pass,String csort){
         this.cid=cid;

@@ -30,4 +30,12 @@
         <servlet-name>download</servlet-name>
         <url-pattern>/download</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>postServlet</servlet-name>
+        <servlet-class>com.vms.postServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>postServlet</servlet-name>
+        <url-pattern>/postServlet</url-pattern>
+    </servlet-mapping>
 </web-app>

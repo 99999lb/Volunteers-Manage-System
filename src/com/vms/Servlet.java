@@ -1,9 +1,9 @@
 package com.vms;
 
-import dao.AccountDao;
-import dao.CustomerDao;
-import dao.PostDao;
+import dao.*;
+import entity.Activity;
 import entity.Customer;
+import entity.JoinActs;
 import entity.Post;
 
 import javax.servlet.ServletException;
@@ -19,11 +19,15 @@ import java.util.ArrayList;
 public class Servlet extends HttpServlet {
     AccountDao ad=new AccountDao();
     CustomerDao c=new CustomerDao();
+    ActivityDao actd=new ActivityDao();
     PostDao pd=new PostDao();
+    JoinActsDao jd=new JoinActsDao();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         String name=request.getParameter("name");
+        String sort= (String) request.getSession().getAttribute("sort");
+
         switch (name){
             case "al"://登录方式选择
                 response.sendRedirect("ALogin.jsp");
@@ -41,8 +45,14 @@ public class Servlet extends HttpServlet {
                 if(aflag){
                     //传入个人信息，跳转到主页
                     request.getSession().setAttribute("aid",aid);
-                    ArrayList<Customer> list=c.queryCustomerByPass();
-                    request.getSession().setAttribute("list",list);
+                    ArrayList<Customer> clist=c.queryCustomerByPass();
+                    request.getSession().setAttribute("clist",clist);
+                    ArrayList<Activity> alist=actd.queryActivityByPass();
+                    request.getSession().setAttribute("alist",alist);
+                    String tid=request.getParameter("tid");
+                    request.getSession().setAttribute("tid",tid);
+                    ArrayList<Post> plist=pd.queryPostCheck();
+                    request.getSession().setAttribute("plist",plist);
                     response.sendRedirect("admin.jsp");//仅作为测试用例，非最终验证结果
                 }
                 else
@@ -72,36 +82,87 @@ public class Servlet extends HttpServlet {
 
                 break;
 
-            case "returnlogin"://退出账号并回到登录界面
-                request.getSession().removeAttribute("cid");
-                request.getSession().removeAttribute("aid");
-                response.sendRedirect("Login.jsp");
+            case "returnlogin"://退出账号并回到主界面
+                if(request.getSession().getAttribute("cid")!=null) {
+                    request.getSession().removeAttribute("cid");
+                    request.getSession().removeAttribute("pass");
+                    request.getSession().removeAttribute("sort");
+                }
+                if(request.getSession().getAttribute("aid")!=null)
+                    request.getSession().removeAttribute("aid");
+                response.sendRedirect("main.jsp");
                 break;
 
 
             case "passp"://审核通过（个人信息）
                 String pid1=request.getParameter("pid");
                 boolean pflag1=c.passIDMessage(pid1);
-                ArrayList<Customer> list=c.queryCustomerByPass();
-                request.getSession().setAttribute("list",list);
+                ArrayList<Customer> clist=c.queryCustomerByPass();
+                request.getSession().setAttribute("clist",clist);
 
                 if(pflag1)
                     response.sendRedirect("admin.jsp?passp=yes");
                 else
                     response.sendRedirect("admin.jsp?passp=no");
                 break;
-
             case "errorp"://审核不通过（个人信息）
                 String pid2=request.getParameter("pid");
                 boolean pflag2=c.noPassIDMessage(pid2);
-                list=c.queryCustomerByPass();
-                request.getSession().setAttribute("list",list);
+                clist=c.queryCustomerByPass();
+                request.getSession().setAttribute("clist",clist);
 
                 if(pflag2)
                     response.sendRedirect("admin.jsp?passp=yes");
                 else
                     response.sendRedirect("admin.jsp?passp=no");
                 break;
+
+            case "passa"://审核通过（活动信息）
+                String actid1=request.getParameter("paid");
+                boolean actflag1=actd.passACTMessage(actid1);
+                ArrayList<Activity> alist=actd.queryActivityByPass();
+                request.getSession().setAttribute("alist",alist);
+
+                if(actflag1)
+                    response.sendRedirect("admin.jsp?passp=yesa");
+                else
+                    response.sendRedirect("admin.jsp?passp=noa");
+                break;
+            case "errorpa"://审核不通过（活动信息）
+                String actid2=request.getParameter("paid");
+                boolean actflag2=actd.noPassACTMessage(actid2);
+                alist=actd.queryActivityByPass();
+                request.getSession().setAttribute("alist",alist);
+
+                if(actflag2)
+                    response.sendRedirect("admin.jsp?passp=yesa");
+                else
+                    response.sendRedirect("admin.jsp?passp=noa");
+                break;
+
+            case "passt"://审核通过（帖子信息）
+                String tid1=request.getParameter("tid");
+                boolean tflag1=pd.passPostMessage(tid1);
+                ArrayList<Post> plist=pd.queryPostCheck();
+                request.getSession().setAttribute("plist",plist);
+
+                if(tflag1)
+                    response.sendRedirect("admin.jsp?passt=yest");
+                else
+                    response.sendRedirect("admin.jsp?passt=not");
+                break;
+            case "errort"://审核不通过（帖子信息）
+                String tid2=request.getParameter("tid");
+                boolean tflag2=pd.noPassPostMessage(tid2);
+                plist=pd.queryPostCheck();
+                request.getSession().setAttribute("plist",plist);
+
+                if(tflag2)
+                    response.sendRedirect("admin.jsp?passt=yest");
+                else
+                    response.sendRedirect("admin.jsp?passt=not");
+                break;
+
 
             case "regis":
                 response.sendRedirect("register.jsp");
@@ -164,6 +225,33 @@ public class Servlet extends HttpServlet {
 
                 break;
 
+            case "joinacts":
+                cid=(String) request.getSession().getAttribute("cid");
+                ArrayList<JoinActs> joinbyid=jd.JoinActivitiesByID(cid);
+                request.getSession().setAttribute("joinbyid",joinbyid);
+                response.sendRedirect("joinacts.jsp");
+                break;
+
+            case "cacts":
+                String CID= (String) request.getSession().getAttribute("cid");
+                ArrayList<Activity> actsbyid=actd.FindActivitiesByCID(CID);
+                request.getSession().setAttribute("actsbyid",actsbyid);
+                response.sendRedirect("cacts.jsp");
+                break;
+
+            case "deletea":
+                String daid=request.getParameter("daid");
+                Boolean df=actd.DeleteActByID(daid);
+                CID= (String) request.getSession().getAttribute("cid");
+                actsbyid=actd.FindActivitiesByCID(CID);
+                request.getSession().setAttribute("actsbyid",actsbyid);
+
+                if(df)
+                    response.sendRedirect("cacts.jsp?da=y");
+                else
+                    response.sendRedirect("cacts.jsp?da=n");
+                break;
+
             case "vact":
                 response.sendRedirect("actInfo.jsp");
                 break;
@@ -172,25 +260,8 @@ public class Servlet extends HttpServlet {
                 response.sendRedirect("actMes.jsp");
                 break;
 
-            case "vpost":
-                String idofPost= (String) request.getSession().getAttribute("cid");
-                String cname=request.getParameter("cname");
-                String title=request.getParameter("title");
-                String tText=request.getParameter("tText");
-                boolean pr=false;
-                try {
-                    pr=pd.addPost(idofPost,cname,title,tText);
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-                if(pr)
-                    response.sendRedirect("post.jsp");
-                else
-                    response.sendRedirect("main.jsp");
-                break;
-
             case "fact":
-                response.sendRedirect("acts.jsp");
+                response.sendRedirect("joinacts.jsp");
                 break;
 
         }

@@ -9,17 +9,24 @@
 <html>
 <head>
     <title>发布活动</title>
+    <script>
+        var err='<%=request.getParameter("ec")%>';
+        if(err=="err")
+            alert("活动创建失败！请检查后重试！")
+
+    </script>
 </head>
 <body>
-<form action="servelt" method="post">
+<form action="netServlet" method="post">
+    <input type="hidden" name="name" value="subact">
     <table border="1" align="center">
         <tr><td style="width: 350px;height: 80px"><h1 style="color: lightgray;" align="center">发布志愿者活动</h1></td></tr>
     </table>
     <br><br>
     <table border="0" align="center">
-        <tr><td>发起人账号：</td><td><%--此处通过session获得参数 --%></td></tr>
+        <tr><td>发起人账号：</td><td><input type="text" name="actcid" value="${cid}" readonly="readonly"></td></tr>
         <tr><td>活动号：</td><td><input type="text" name="actid" maxlength="10"></td></tr>
-        <tr><td>活动名：</td><td><input type="text" name="actn"></td></tr>
+        <tr><td>活动名：</td><td><input type="text" name="actn" style="width: 200px"></td></tr>
         <tr><td>活动类别：</td><td><select size="1" name="as">
             <option>探访老人</option>
             <option>清洁公共卫生</option>
@@ -35,7 +42,7 @@
         <tr><td>活动截止时间：</td><td><input type="datetime-local" name="et"></td></tr>
         <tr><td>招募开始时间：</td><td><input type="datetime-local" name="srt"></td></tr>
         <tr><td>招募截止时间：</td><td><input type="datetime-local" name="ert"></td></tr>
-        <tr><td>活动持续时间（/h）：</td><td><input type="number" name="dur" min="0.5">*持续时间不得小于0.5h</td></tr>
+        <tr><td>活动持续时间（/h）：</td><td><input type="number" name="dur" min="0.5" step="0.5">*持续时间不得小于0.5h</td></tr>
         <tr><td>活动需求人数：</td><td><input type="number" name="pnum" min="5">*所需人数不得小于5</td></tr>
         <tr><td>活动描述：</td><td><input type="text" name="abrif" style="width: 300px;height: 100px"></td></tr>
         <tr><td colspan="2" align="center"><input type="submit" value="提交"></td></tr>

@@ -95,5 +95,17 @@ public class CustomerDao {
         return result;
     }
 
+    public Customer queryCustomerByCID(String cid){
+        Customer c=null;
+        String sql="select CID,CName from CInfo where CID='"+cid+"'";
+        ResultSet rs= SQLHelper.executeQuery(sql);
+        try{
+            if(rs!=null&&rs.next()){
+                c=new Customer(rs.getString(1),rs.getString(2));
+            }
+
+        }catch(Exception e){}
+        return c;
+    }
 
 }

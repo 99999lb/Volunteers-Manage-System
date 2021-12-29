@@ -1,6 +1,7 @@
 package entity;
 
 public class Activity {
+    private String CID;
     private String actID;
     private String actName;
     private String sort;
@@ -14,8 +15,9 @@ public class Activity {
     private String actBrif;
     private String pass;
     public Activity(){}
-    public Activity(String actID,String actName,String sort,String place,String startTime,String endTime,String rStartTime,String rEndTime,
-                    String duration,String peoNum,String actBrif,String pass){
+    public Activity(String CID, String actID, String actName, String sort, String place, String startTime, String endTime, String rStartTime, String rEndTime,
+                    String duration, String peoNum, String actBrif, String pass){
+        this.CID=CID;
         this.actID=actID;
         this.actName=actName;
         this.sort=sort;
@@ -29,6 +31,10 @@ public class Activity {
         this.actBrif=actBrif;
         this.pass=pass;
     }
+
+    public String getCID(){return CID;}
+
+    public void setCID(String CID){this.CID=CID;}
 
     public String getActID() {
         return actID;
