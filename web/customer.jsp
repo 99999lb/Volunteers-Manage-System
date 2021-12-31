@@ -21,6 +21,8 @@
     var upd='<%=request.getParameter("upd")%>'
     if(upd=="true")
         alert("信息更新成功！请等待审核！")
+    else if(upd=="update")
+        alert("请更新信息！")
 
 </script>
 <body>
@@ -104,7 +106,7 @@
             </tr>
             <tr>
                 <td colspan="2" align="center">
-                    <a href='servelt?name=vpost'>发布的帖子</a>
+                    <a href='postServlet?name=dPost'>发布的帖子</a>
                 </td>
             </tr>
             <tr>

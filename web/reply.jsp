@@ -29,9 +29,17 @@
         String cid=(String) request.getSession().getAttribute("cid");
         CustomerDao cd=new CustomerDao();
         Customer c=cd.queryCustomerByCID(cid);
-        request.setAttribute("c",c);
+        if(c.getCname()==null) c.setCname("游客");
+        String cn=c.getCname();
+        request.setAttribute("cn",cn);
     %>
 </head>
+<script>
+    var errorr='<%=request.getParameter("ra")%>';
+    if(errorr=="p")
+        alert("用户信息未通过审核！请之后重试！")
+
+</script>
 <body>
     <form method="post" action="postServlet">
         <input type="hidden" name="name" value="reply">
@@ -52,7 +60,9 @@
         <table width="60%" border="1" class="hovertable" align="center">
             <%
                 for(Reply r:rlist){
+
                     out.println("<tr>");
+                    out.print("<td><a href='postServlet?name=deleter&rid="+r.getRid()+"&cidR="+r.getCid()+"'>删除留言</a></td>");
                     out.println("<td>"+r.getCname()+"</td>");
                     out.println("<td>"+r.getRep()+"</td>");
                     out.print("</tr>");
@@ -64,7 +74,7 @@
             <input type="hidden" name="tid" value="<%=tid%>">
             <tr>
                 <td>昵称</td>
-                <td><input type="text" name="cname" value="<%=c.getCname()%>"></td>
+                <td><input type="text" name="cname" value="<%=cn%>"></td>
             </tr>
             <tr>
                 <td>请输入你的答复</td>

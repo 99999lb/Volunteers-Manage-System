@@ -7,45 +7,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ee6a3ba-35fb-46c5-84e4-3de993c578b0" name="默认的" comment="1229">
-      <change afterPath="$PROJECT_DIR$/src/com/vms/postServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dao/JoinActsDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dao/ReplyDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/entity/JoinActs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/entity/JoinNum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/entity/Reply.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/cacts.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/joinacts.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/point.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/reply.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/displayPost.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/ALogin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/ALogin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/CLogin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/CLogin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/Login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/Login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/register.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/renew.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/renew.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/WEB-INF/classes/DBHelper/SQLHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/WEB-INF/classes/DBHelper/SQLHelper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DBHelper/SQLHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBHelper/SQLHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/vms/Servlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/vms/Servlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/vms/netServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/vms/netServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/ActivityDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ActivityDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/CustomerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/CustomerDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/vms/postServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/vms/postServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dao/PostDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/PostDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/ActMes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Activity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/Acts.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Post.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ActSub.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/ActSub.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/CLogin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/CLogin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/actMes.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/acts.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/acts.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/addPost.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/addPost.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/ReplyDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ReplyDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/DBHelper/SQLHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/DBHelper/SQLHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/actInfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/actInfo.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/customer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/customer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/main.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/post.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/post.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/日志.txt" beforeDir="false" afterPath="$PROJECT_DIR$/日志.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/reply.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/reply.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,17 +125,6 @@
     <configuration name="draft" type="Application" factoryName="应用程序" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="draft" />
       <module name="Volunteers Manage System" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -293,7 +257,13 @@
       <workItem from="1640245634155" duration="17094000" />
       <workItem from="1640362225950" duration="3107000" />
       <workItem from="1640782825316" duration="1807000" />
-      <workItem from="1640786750753" duration="299000" />
+      <workItem from="1640786750753" duration="10379000" />
+      <workItem from="1640854140329" duration="10022000" />
+      <workItem from="1640867027309" duration="802000" />
+      <workItem from="1640867856540" duration="1092000" />
+      <workItem from="1640872516821" duration="4788000" />
+      <workItem from="1640877419741" duration="5323000" />
+      <workItem from="1640910590574" duration="163000" />
     </task>
     <task id="LOCAL-00001" summary="默认的">
       <created>1639148789271</created>
@@ -351,7 +321,21 @@
       <option name="project" value="LOCAL" />
       <updated>1640787042016</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="1229">
+      <created>1640787085085</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1640787085085</updated>
+    </task>
+    <task id="LOCAL-00010" summary="1229">
+      <created>1640787095479</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1640787095479</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

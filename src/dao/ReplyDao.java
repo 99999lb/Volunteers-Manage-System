@@ -33,4 +33,12 @@ public class ReplyDao {
         return flag;
     }
 
+    public Boolean deleteReply(String rid) throws SQLException {
+        Boolean flag=false;
+        int rs=SQLHelper.executeUpdate("delete from Reply where RID='"+rid+"'");
+        if (rs!=0)
+            flag=true;
+        return flag;
+    }
+
 }
