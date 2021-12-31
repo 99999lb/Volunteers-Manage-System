@@ -1,7 +1,9 @@
 <%@ page import="dao.CustomerDao" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="entity.Customer" %>
-<%@ page import="entity.Activity" %><%--
+<%@ page import="entity.Activity" %>
+<%@ page import="entity.Post" %>
+<%@ page import="entity.Article" %><%--
   Created by IntelliJ IDEA.
   User: Kuroen
   Date: 2021/12/15
@@ -28,10 +30,22 @@
             alert("审核志愿活动信息成功！数据库已更新！")
         else if(passp=="noa")
             alert("审核志愿活动信息失败！请稍后重试")
+        else if(passp=="yest")
+            alert("审核帖子信息成功！数据库已更新！")
+        else if(passp=="not")
+            alert("审核帖子信息失败！请稍后重试")
+        else if(passp=="nn")
+            alert("文章创建失败！请稍后重试")
+        else if(passp=="dnn")
+            alert("文章删除失败！请稍后重试")
+        else if(passp=="dny")
+            alert("文章删除成功！")
     </script>
     <%
         ArrayList<Customer> clist= (ArrayList<Customer>) session.getAttribute("clist");
         ArrayList<Activity> alist= (ArrayList<Activity>) session.getAttribute("alist");
+        ArrayList<Post> plist=(ArrayList<Post>)session.getAttribute("plist");
+        ArrayList<Article> atclist= (ArrayList<Article>) request.getSession().getAttribute("atclist");
     %>
 </head>
 <body>
@@ -46,6 +60,7 @@
             <td><input type="text" name="aid" value="${id}" readonly="readonly" ></td>
         </tr>
     </table>
+
     <br>
     <h3 align="center" style="color: skyblue">待审核用户信息</h3>
     <table border="1" align="center">
@@ -64,13 +79,14 @@
                     out.println("<td>"+c.getAddress()+"</td>");
                     out.println("<td>"+c.getCsort()+"</td>");
                     out.println("<td><a href='servelt?name=passp&pid="+c.getCid()+"'>审核通过</a>"+"  "
-                    +"<a href='servelt?name=errorp&pid="+c.getCid()+"'>审核不通过</a></td>");
+                            +"<a href='servelt?name=errorp&pid="+c.getCid()+"'>审核不通过</a></td>");
                     out.println("</tr>");
                 }
             }
         %>
         </tbody>
     </table>
+
     <br>
     <h3 align="center" style="color: brown">待审核志愿者活动信息</h3>
     <table border="1" align="center">
@@ -104,9 +120,58 @@
         %>
         </tbody>
     </table>
+
     <br>
     <h3 align="center" style="color: lightgray">待审核帖子信息</h3>
     <table border="1" align="center">
+        <thead><tr><th>账号名</th><th>用户名</th><th style="width: 150px">帖子标题</th><th style="width: 200px;height: 60px;">帖子内容</th>
+            <th>审核</th></tr>
+        </thead>
+        <tbody>
+        <%
+            if(plist!=null){
+                for(Post p:plist){
+                    out.println("<tr>");
+                    out.println("<td>"+p.getCid()+"</td>");
+                    out.println("<td>"+p.getCname()+"</td>");
+                    out.println("<td>"+p.getTitle()+"</td>");
+                    out.println("<td>"+p.gettText()+"</td>");
+                    out.println("<td><a href='servelt?name=passt&tid="+p.getTid()+"'>审核通过</a>"+"  "
+                            +"<a href='servelt?name=errort&tid="+p.getTid()+"'>审核不通过</a></td>");
+                    out.println("</tr>");
+                }
+            }
+        %>
+        </tbody>
+    </table>
+
+    <br>
+    <h3 align="center" style="color: plum">已发新闻</h3>
+    <table align="center" border="1">
+        <thead>
+        <tr>
+            <th>账号名</th><th>新闻号</th><th>标题</th><th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <%
+            if(atclist!=null){
+                for(Article a:atclist){
+                    out.println("<tr>");
+                    out.println("<td>"+a.getAid()+"</td>");
+                    out.println("<td>"+a.getTid()+"</td>");
+                    out.println("<td>"+a.getTitle()+"</td>");
+                    out.println("<td><a href='articleServlet?name=deletenews&tid="+a.getTid()+"'>删除文章</a></td>");
+                    out.println("</tr>");
+                }
+            }
+        %>
+        </tbody>
+    </table>
+    <table border="0" align="center">
+        <tr>
+            <td colspan="2" align="center"><a href="addnews.jsp">发布新闻</a></td>
+        </tr>
         <tr>
             <td colspan="2" align="center"><a href="servelt?name=returnlogin">退出登录</a></td>
         </tr>

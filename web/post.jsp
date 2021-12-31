@@ -18,16 +18,20 @@
     %>
 </head>
 <body>
-<form name="fact" method="post" action="netServlet">
+<form method="post" action="netServlet">
     <input type="hidden" name="name" value="forum">
+    <table width="60%" border="0" class="hovertable" align="center">
+        <%out.print("<td><a href='addPost.jsp'>发新帖</a></td>");%>
+        <%out.print("<td><a href='main.jsp'>回主界面</a></td>");%>
+    </table>
+    <table width="60%" border="1" class="hovertable" align="center">
 
-    <table border="0" cellspacing="0" cellpadding="0">
         <%
-            out.print("<td><a href='addPost.jsp'>发新帖</a></td>");
             for(Post p:plist){
                 out.print("<tr>");
+                out.print("<td><a href='postServlet?name=deletep&tid="+p.getTid()+"'>删除帖</a></td>");
+                out.print("<td><a href='postServlet?name=reply&tid="+p.getTid()+"'>"+p.getTitle()+"</a></td>");
                 out.print("<td>"+p.getCname()+"</td>");
-                out.print("<td>"+p.getTitle()+"</td>");
                 out.print("</tr>");
             }
         %>
@@ -35,3 +39,4 @@
 </form>
 </body>
 </html>
+

@@ -1,9 +1,10 @@
 package com.vms;
 
 import dao.ActivityDao;
+import dao.ArticleDao;
 import dao.JoinActsDao;
 import entity.Activity;
-import entity.JoinActs;
+import entity.Article;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,6 +20,7 @@ import java.util.ArrayList;
 public class netServlet extends HttpServlet {
     ActivityDao ad=new ActivityDao();
     JoinActsDao jad=new JoinActsDao();
+    ArticleDao atd=new ArticleDao();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
@@ -138,12 +140,16 @@ public class netServlet extends HttpServlet {
                 break;
 
             case "news":
+                ArrayList<Article> atclist=atd.queryNews();
+                request.getSession().setAttribute("atclist",atclist);
+                response.sendRedirect("news.jsp");
                 break;
 
             case "pac":
                 break;
 
             case "forum":
+                response.sendRedirect("post.jsp");
                 break;
 
             case "download":

@@ -1,7 +1,6 @@
 package dao;
 
 import DBHelper.SQLHelper;
-import entity.Activity;
 import entity.JoinActs;
 import entity.JoinNum;
 
