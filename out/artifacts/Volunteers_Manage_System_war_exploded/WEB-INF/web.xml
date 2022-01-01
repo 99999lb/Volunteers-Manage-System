@@ -31,6 +31,14 @@
         <url-pattern>/download</url-pattern>
     </servlet-mapping>
     <servlet>
+        <servlet-name>upload</servlet-name>
+        <servlet-class>com.vms.uploadServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>upload</servlet-name>
+        <url-pattern>/upload</url-pattern>
+    </servlet-mapping>
+    <servlet>
         <servlet-name>postServlet</servlet-name>
         <servlet-class>com.vms.postServlet</servlet-class>
     </servlet>

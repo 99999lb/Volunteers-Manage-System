@@ -147,6 +147,7 @@ public class netServlet extends HttpServlet {
                 break;
 
             case "download":
+                response.sendRedirect("downloadFiles.jsp");
                 break;
         }
     }

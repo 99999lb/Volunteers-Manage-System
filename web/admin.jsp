@@ -134,7 +134,9 @@
         </tbody>
     </table>
     <table border="1" align="center">
-
+        <tr>
+            <td colspan="2" align="center"><a href="uploadfiles.jsp">上传文件</a></td>
+        </tr>
         <tr>
             <td colspan="2" align="center"><a href="servelt?name=returnlogin">退出登录</a></td>
         </tr>

@@ -1,11 +1,13 @@
-import dao.AccountDao;
+import dao.FileDao;
+import dao.PostDao;
+import entity.FileStore;
+import entity.Post;
 
-import java.sql.*;
-import java.util.Scanner;
+import java.util.List;
 
 public class draft {
     public static void main(String[] args) throws Exception {//本类用于测试数据库连接
-        String driver="com.microsoft.sqlserver.jdbc.SQLServerDriver";
+        /*String driver="com.microsoft.sqlserver.jdbc.SQLServerDriver";
         Class.forName(driver);
         String url="jdbc:sqlserver://localhost:1433; DatabaseName=ts";
         Connection con=DriverManager.getConnection(url,"sa","123456");
@@ -15,6 +17,7 @@ public class draft {
         Boolean t1=d.CheckAdmin(new Scanner(System.in).next(),new Scanner(System.in).next());
         System.out.println(t1);
         Boolean t2=d.CheckCustomer(new Scanner(System.in).next(),new Scanner(System.in).next());
-        System.out.println(t2);
+        System.out.println(t2);*/
+
     }
 }
