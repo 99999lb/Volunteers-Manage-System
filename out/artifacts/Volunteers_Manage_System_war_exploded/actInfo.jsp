@@ -1,7 +1,7 @@
-<%@ page import="entity.Customer" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="entity.Activity" %>
-<%@ page import="dao.ActivityDao" %><%--
+<%@ page import="dao.ActivityDao" %>
+<%--
   Created by IntelliJ IDEA.
   User: 27721
   Date: 2021/12/18

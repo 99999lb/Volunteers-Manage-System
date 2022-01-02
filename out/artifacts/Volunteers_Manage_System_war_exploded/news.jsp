@@ -15,6 +15,8 @@
     var p='<%=request.getParameter("p")%>';
     if(p=="y")
         alert("新闻发布成功！")
+    else if(p=="py")
+        alert("志愿者训练文章发布成功！")
 </script>
 <%
     ArrayList<Article> list= (ArrayList<Article>) request.getSession().getAttribute("atclist");
@@ -25,14 +27,25 @@
     <table align="center" border="1">
         <thead>
         <tr>
-            <th align="center">新闻标题</th>
+            <th align="center"><%
+                String sort=request.getParameter("n");
+
+                switch (sort){
+                    case "n":
+                        out.println("新闻标题");
+                        break;
+                    case "p":
+                        out.println("志愿者培训文章标题");
+                        break;
+                }
+            %></th>
         </tr>
         </thead>
         <%
             if(list!=null){
                 for(Article a:list){
                     out.print("<tr align='center'>");
-                    out.print("<td ><a href='articleServlet?name=browse&tid="+a.getTid()+"'>"+a.getTitle()+"</a></td>");
+                    out.print("<td ><a href='articleServlet?name=browse&s="+sort+"&tid="+a.getTid()+"'>"+a.getTitle()+"</a></td>");
                     out.print("</tr>");
                 }
             }

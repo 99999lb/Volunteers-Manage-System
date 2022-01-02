@@ -30,6 +30,8 @@
     var ja='<%=request.getParameter("ja")%>';
     if(ja=="adm" || ja=="c")
         alert("仅个体用户才能参加志愿者活动！")
+    else if(ja=="np")
+        alert("用户信息未通过审核或审核失败！请修改信息后重试！")
     else if(ja=="y")
         alert("活动参加成功！请注意活动开始时间！")
     else if(ja=="n")

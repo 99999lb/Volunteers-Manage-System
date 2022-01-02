@@ -17,7 +17,7 @@
 </head>
 <body>
 <a href="customer.jsp">回个人主页</a>
-<form name="fact" method="post" action="servelt">
+<form method="post" action="servelt">
     <input type="hidden" name="name" value="pa">
     <table border="0" align="center">
         <tbody>

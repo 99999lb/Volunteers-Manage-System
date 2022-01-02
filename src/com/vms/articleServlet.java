@@ -1,6 +1,5 @@
 package com.vms;
 
-import dao.ActivityDao;
 import dao.ArticleDao;
 import entity.Article;
 
@@ -35,14 +34,13 @@ public class articleServlet extends HttpServlet {
                     e.printStackTrace();
                 }
                 if (pr) {
-                    response.sendRedirect("news.jsp?p=y");
                     ArrayList<Article> atclist=atd.queryNews();
                     request.getSession().setAttribute("atclist",atclist);
+                    response.sendRedirect("news.jsp?p=y&n=n");
                 }
                 else
                     response.sendRedirect("admin.jsp?passp=nn");
                 break;
-
             case "deletenews":
                 pr=false;
                 try {
@@ -60,10 +58,54 @@ public class articleServlet extends HttpServlet {
                     response.sendRedirect("admin.jsp?passp=dnn");
                 break;
 
+            case "addpac":
+                pr = false;
+                try {
+                    pr = atd.addPacs(aid,title,tText);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                if (pr) {
+                    ArrayList<Article> atclist=atd.queryPacs();
+                    request.getSession().setAttribute("atclist",atclist);
+                    response.sendRedirect("news.jsp?p=py&n=p");
+                }
+                else
+                    response.sendRedirect("admin.jsp?passp=pnn");
+                break;
+            case "deletepac":
+                pr=false;
+                try {
+                    pr=atd.deletePac(tid);
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+
+                if(pr) {
+                    response.sendRedirect("admin.jsp?passp=dny");
+                    ArrayList<Article> paclist=atd.queryPacs();
+                    request.getSession().setAttribute("paclist",paclist);
+                }
+                else
+                    response.sendRedirect("admin.jsp?passp=dnn");
+                break;
+
             case "browse":
-                ArrayList<Article> actlist=atd.queryNewsByTid(tid);
+                String sort=request.getParameter("s");
+                ArrayList<Article> actlist;
+                switch (sort){
+                    case "n":
+                        actlist=atd.queryNewsByTid(tid);
+                        break;
+
+                    case "p":
+                        actlist=atd.queryPacsByTid(tid);
+                        break;
+                    default:
+                        throw new IllegalStateException("Unexpected value: " + sort);
+                }
                 request.getSession().setAttribute("actlist",actlist);
-                response.sendRedirect("browse.jsp");
+                response.sendRedirect("browse.jsp?s="+sort);
                 break;
         }
     }

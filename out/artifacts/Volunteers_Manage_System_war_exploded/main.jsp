@@ -10,6 +10,11 @@
 <head>
     <title>志愿服务网</title>
 </head>
+<script>
+    var error='<%=request.getParameter("errorm")%>';
+    if(error=="nologin")
+        alert("请先登录！")
+</script>
 <body>
 <form method="post" action="servelt">
     <table border="1" align="center" width="80%">

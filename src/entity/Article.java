@@ -9,7 +9,7 @@ public class Article {
     public Article(){
     }
 
-    public Article(String aid,String title,String tText,int tid){
+    public Article(String aid, String title, String tText, int tid){
         this.aid=aid;
         this.title=title;
         this.tText=tText;

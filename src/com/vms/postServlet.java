@@ -3,6 +3,7 @@ package com.vms;
 import dao.CustomerDao;
 import dao.PostDao;
 import dao.ReplyDao;
+import entity.Customer;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,12 +23,16 @@ public class postServlet extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
         String name=request.getParameter("name");
-        String cid= request.getParameter("cid");
+        String cid=(String) request.getSession().getAttribute("cid");
         String cname=request.getParameter("cname");
         String title=request.getParameter("title");
         String tText=request.getParameter("tText");
-        String tid= request.getParameter("tid");
+        String tid=request.getParameter("tid");
         String rep=request.getParameter("rep");
+        String aid=(String) request.getSession().getAttribute("aid");
+        String pass=(String) request.getSession().getAttribute("pass");
+        String rid=request.getParameter("rid");
+        Customer c=cd.queryCustomerByCID(cid);
 
         switch(name){
             case "addPost":
@@ -38,18 +43,48 @@ public class postServlet extends HttpServlet {
                     e.printStackTrace();
                 }
                 if(pr)
-                    response.sendRedirect("post.jsp");
+                        response.sendRedirect("post.jsp?p=y");
                 else
-                    response.sendRedirect("main.jsp");
+                        response.sendRedirect("post.jsp?p=n");
+
+
                 break;
             case "deletep":
                 try {
                     pd.deletePost(tid);
+                    response.sendRedirect("customer.jsp");
                 } catch (SQLException throwables) {
                     throwables.printStackTrace();
                 }
-                response.sendRedirect("post.jsp");
                 break;
+
+            case "deleter":
+                String cidR=request.getParameter("cidR");
+                if(cid==null){
+                    System.out.println("deleter1");
+                    response.sendRedirect("main.jsp?errorm=nologin");
+                }
+                else{
+                    if(!pass.trim().equals("Y")){
+                        System.out.println("deleter2.1");
+                        response.sendRedirect("reply.jsp?ra=p");
+                    }
+                    else if(cid.equals(cidR)||aid!=null) {
+                        try {
+                            System.out.println("deleter2.2");
+                            rd.deleteReply(rid);
+                        } catch (SQLException throwables) {
+                            throwables.printStackTrace();
+                        }
+                    }
+                    else {
+                        System.out.println("deleter2.3");
+                        response.sendRedirect("reply.jsp?ra=delr");
+
+                    }
+                }
+                break;
+
             case "reply":
                 request.getSession().setAttribute("tid",tid);
                 Boolean rr=false;
@@ -58,8 +93,32 @@ public class postServlet extends HttpServlet {
                     rr=rd.addReply(Integer.parseInt(tid),cid,cname,rep);
                 } catch (SQLException throwables) {
                 }
-                response.sendRedirect("reply.jsp");
+                    response.sendRedirect("reply.jsp");
+                break;
 
+
+            case "post":
+                if(aid==null&&cid==null){
+                    System.out.println("post1");
+                    response.sendRedirect("main.jsp?errorm=nologin");
+                }
+                else{
+                    if(pass.trim()!=null && !pass.trim().equals("Y")){
+                        System.out.println("post2.1");
+                        response.sendRedirect("post.jsp?pa=p");}
+                    else if(c.getCname()==null){
+                        System.out.println("post2.2");
+                        response.sendRedirect("customer.jsp?upd=update");
+                    }
+                    else{
+                        System.out.println("post2.3");
+                        response.sendRedirect("addPost.jsp");
+                    }
+                }
+                break;
+
+            case "dPost":
+                response.sendRedirect("displayPost.jsp");
                 break;
         }
     }

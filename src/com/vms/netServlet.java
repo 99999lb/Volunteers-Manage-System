@@ -95,30 +95,34 @@ public class netServlet extends HttpServlet {
                 aid= (String) request.getSession().getAttribute("aid");
                 flag=false;
 
-                if(aid!=null)
+                if(aid!=null)//是否为管理员
                     response.sendRedirect("acts.jsp?ja=adm");
-                else {
-                    if(cusid==null)
+                else {//是否为用户
+                    if(cusid==null)//用户是否登录
                         response.sendRedirect("CLogin.jsp?errorc=nologin");
                     else {
-                        if(sort.trim().equals("C"))
-                            response.sendRedirect("acts.jsp?ja=c");
+                        if(!pass.trim().equals("Y"))//是否通过审核
+                            response.sendRedirect("acts.jsp?ja=np");
                         else {
-                            if(jnum>jad.JoinCountByID(jaid)){
+                            if(sort.trim().equals("C"))//是否为团队用户
+                                response.sendRedirect("acts.jsp?ja=c");
+                            else {
+                                if(jnum>jad.JoinCountByID(jaid)){//活动是否满员
 
-                                try {
-                                    flag=jad.JoinAct(cusid,jaid);
-                                } catch (SQLException e) {
-                                    e.printStackTrace();
+                                    try {
+                                        flag=jad.JoinAct(cusid,jaid);
+                                    } catch (SQLException e) {
+                                        e.printStackTrace();
+                                    }
+
+                                    if(flag)
+                                        response.sendRedirect("acts.jsp?ja=y");
+                                    else
+                                        response.sendRedirect("acts.jsp?ja=n");
                                 }
-
-                                if(flag)
-                                    response.sendRedirect("acts.jsp?ja=y");
                                 else
-                                    response.sendRedirect("acts.jsp?ja=n");
+                                    response.sendRedirect("CLogin.jsp?errorc=surpass");
                             }
-                            else
-                                response.sendRedirect("CLogin.jsp?errorc=surpass");
                         }
                     }
                 }
@@ -142,10 +146,13 @@ public class netServlet extends HttpServlet {
             case "news":
                 ArrayList<Article> atclist=atd.queryNews();
                 request.getSession().setAttribute("atclist",atclist);
-                response.sendRedirect("news.jsp");
+                response.sendRedirect("news.jsp?n=n");
                 break;
 
             case "pac":
+                atclist=atd.queryPacs();
+                request.getSession().setAttribute("atclist",atclist);
+                response.sendRedirect("news.jsp?n=p");
                 break;
 
             case "forum":
@@ -153,6 +160,7 @@ public class netServlet extends HttpServlet {
                 break;
 
             case "download":
+                response.sendRedirect("downloadFiles.jsp");
                 break;
         }
     }

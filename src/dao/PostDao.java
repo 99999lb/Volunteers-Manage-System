@@ -72,6 +72,22 @@ public class PostDao {
         return plist;
     }
 
+    public ArrayList<Post> queryPostByCID(String cid){
+        ArrayList<Post> plist =new ArrayList<>();
+        Post p=null;
+        String sql="select * from Post where CID='"+cid+"'";
+        ResultSet rs= SQLHelper.executeQuery(sql);
+        try{
+            while (rs.next()){
+                p=new Post(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),
+                        rs.getString(5),Integer.parseInt(rs.getString(6)));
+                plist.add(p);
+            }
+        }catch(Exception e){}
+
+        return plist;
+    }
+
     public boolean passPostMessage(String tid){
         Boolean flag=false;
         int rs= SQLHelper.executeUpdate("UPDATE Post SET Pass='Y' where TID='"+tid+"'");

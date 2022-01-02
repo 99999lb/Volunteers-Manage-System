@@ -21,6 +21,8 @@
     var upd='<%=request.getParameter("upd")%>'
     if(upd=="true")
         alert("信息更新成功！请等待审核！")
+    else if(upd=="update")
+        alert("请更新信息！")
 
 </script>
 <body>
@@ -67,7 +69,7 @@
             </tr>
             <tr>
                 <td>用户名</td>
-                <td><input type="text" name="cname" value="${cus.cname}" readonly="readonly"></td>
+                <td><input type="text" name="cname" value="${cus.cname}" readonly="readonly" style="width: 250px"></td>
             </tr>
             <tr>
                 <td>性别</td>
@@ -104,7 +106,7 @@
             </tr>
             <tr>
                 <td colspan="2" align="center">
-                    <a href='servelt?name=vpost'>发布的帖子</a>
+                    <a href='postServlet?name=dPost'>发布的帖子</a>
                 </td>
             </tr>
             <tr>

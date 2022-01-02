@@ -46,6 +46,7 @@
         ArrayList<Activity> alist= (ArrayList<Activity>) session.getAttribute("alist");
         ArrayList<Post> plist=(ArrayList<Post>)session.getAttribute("plist");
         ArrayList<Article> atclist= (ArrayList<Article>) request.getSession().getAttribute("atclist");
+        ArrayList<Article> paclist= (ArrayList<Article>) request.getSession().getAttribute("paclist");
     %>
 </head>
 <body>
@@ -168,9 +169,39 @@
         %>
         </tbody>
     </table>
+
+    <br>
+    <h3 align="center" style="color: darkseagreen">已发培训文章</h3>
+    <table align="center" border="1">
+        <thead>
+        <tr>
+            <th>账号名</th><th>文章号</th><th>标题</th><th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <%
+            if(paclist!=null){
+                for(Article a:paclist){
+                    out.println("<tr>");
+                    out.println("<td>"+a.getAid()+"</td>");
+                    out.println("<td>"+a.getTid()+"</td>");
+                    out.println("<td>"+a.getTitle()+"</td>");
+                    out.println("<td><a href='articleServlet?name=deletepac&tid="+a.getTid()+"'>删除文章</a></td>");
+                    out.println("</tr>");
+                }
+            }
+        %>
+        </tbody>
+    </table>
     <table border="0" align="center">
         <tr>
+            <td colspan="2" align="center"><a href="uploadfiles.jsp">上传文件</a></td>
+        </tr>
+        <tr>
             <td colspan="2" align="center"><a href="addnews.jsp">发布新闻</a></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"><a href="addpac.jsp">发布志愿者培训文章</a></td>
         </tr>
         <tr>
             <td colspan="2" align="center"><a href="servelt?name=returnlogin">退出登录</a></td>

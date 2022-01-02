@@ -16,8 +16,18 @@
 %>
 <body>
 <form action="articleServlet" method="post">
-    <a href="news.jsp">返回新闻一览</a>
-    <table border="1" align="center">
+    <%
+        String sort=request.getParameter("s");
+        switch (sort){
+            case "n":
+                out.println("<a href=news.jsp?n=n>返回新闻一览</a>");
+                break;
+            case "p":
+                out.println("<a href=news.jsp?n=p>返回培训文章一览</a>");
+                break;
+        }
+    %>
+    <table border="1" align="center" width="80%">
         <thead><tr ><th><%
             out.println("<h1>"+list.get(0).getTitle()+"</h1>");
         %></th></tr></thead>
