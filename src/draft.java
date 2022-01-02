@@ -18,6 +18,11 @@ public class draft {
         System.out.println(t1);
         Boolean t2=d.CheckCustomer(new Scanner(System.in).next(),new Scanner(System.in).next());
         System.out.println(t2);*/
-
+        String s1=null;
+        String s2="dsj";
+        String s3="dsj";
+        if(s2.equals(s1)||s3!=null){
+            System.out.println("1");
+        }
     }
 }

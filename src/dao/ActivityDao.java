@@ -134,6 +134,8 @@ public class ActivityDao {
                     a.getPlace()+"','"+st+"','"+et+"','"+rst+"','"+ret+"','"+dur+"','"+peonum+"','"+a.getActBrif()+"','N')");
         if (result!=0)
             flag=true;
+
+
         return flag;
     }
 

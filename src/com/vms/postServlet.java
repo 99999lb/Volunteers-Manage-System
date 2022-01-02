@@ -62,16 +62,18 @@ public class postServlet extends HttpServlet {
 
             case "deleter":
                 String cidR=request.getParameter("cidR");
-                if(cid==null){
+                System.out.println("cid"+cid);
+                System.out.println("aid"+aid);
+                System.out.println("cidR"+cidR);
+                if(cid==null&&aid==null){
                     System.out.println("deleter1");
                     response.sendRedirect("main.jsp?errorm=nologin");
                 }
-                else{
-                    if(!pass.trim().equals("Y")){
+                    else if(cid!=null&&!pass.trim().equals("Y")){
                         System.out.println("deleter2.1");
                         response.sendRedirect("reply.jsp?ra=p");
                     }
-                    else if(cid.equals(cidR)||aid!=null) {
+                    else if(cidR.equals(cid)||aid!=null) {
                         try {
                             System.out.println("deleter2.2");
                             rd.deleteReply(rid);
@@ -79,12 +81,6 @@ public class postServlet extends HttpServlet {
                             throwables.printStackTrace();
                         }
                     }
-                    else {
-                        System.out.println("deleter2.3");
-                        response.sendRedirect("reply.jsp?ra=delr");
-
-                    }
-                }
                 break;
 
             case "reply":

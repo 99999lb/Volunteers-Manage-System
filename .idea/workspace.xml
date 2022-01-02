@@ -6,45 +6,28 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ee6a3ba-35fb-46c5-84e4-3de993c578b0" name="默认的" comment="happy new year">
-      <change afterPath="$PROJECT_DIR$/web/Desert.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/css/Desert.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/css/basictable.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/css/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/css/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/css/nav.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/css/table-style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/test1.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+    <list default="true" id="6ee6a3ba-35fb-46c5-84e4-3de993c578b0" name="默认的" comment="12">
+      <change afterPath="$PROJECT_DIR$/src/com/vms/articleServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dao/ArticleDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/entity/Article.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/addnews.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/addpac.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/browse.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/news.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/CLogin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/CLogin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/Login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/Login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/WEB-INF/classes/DBHelper/SQLHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/WEB-INF/classes/DBHelper/SQLHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/register.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/renew.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/renew.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/WEB-INF/classes/com/vms/Servlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/WEB-INF/classes/com/vms/Servlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DBHelper/SQLHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBHelper/SQLHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/vms/Servlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/vms/Servlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/vms/netServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/vms/netServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/vms/postServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/vms/postServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ALogin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/ALogin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ActSub.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/ActSub.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/CLogin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/CLogin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/Login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/ActivityDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ActivityDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/draft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/draft.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/DBHelper/SQLHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/DBHelper/SQLHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/acts.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/acts.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/addPost.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/addPost.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/vms/Servlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/vms/Servlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/draft.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/draft.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/cInfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/cInfo.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/cacts.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/cacts.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/customer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/customer.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/displayPost.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/displayPost.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/downloadFiles.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/downloadFiles.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/joinacts.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/joinacts.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/main.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/point.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/point.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/post.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/post.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/register.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/renew.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/renew.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/reply.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/reply.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/uploadfiles.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/uploadfiles.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,10 +119,10 @@
       <recent name="C:\Users\27721\Desktop\VolunteerServiceSystem\dsj\Volunteers-Manage-System\web\WEB-INF\lib" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="dao" />
       <recent name="com.vms" />
-      <recent name="DBHelper" />
       <recent name="entity" />
+      <recent name="dao" />
+      <recent name="DBHelper" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.54">
@@ -306,6 +289,12 @@
       <workItem from="1641048267097" duration="7620000" />
       <workItem from="1641085785173" duration="12440000" />
       <workItem from="1641100774711" duration="8018000" />
+      <workItem from="1641122090356" duration="2761000" />
+      <workItem from="1641125997272" duration="3330000" />
+      <workItem from="1641132311384" duration="2576000" />
+      <workItem from="1641134961561" duration="533000" />
+      <workItem from="1641135528682" duration="6081000" />
+      <workItem from="1641141838091" duration="2485000" />
     </task>
     <task id="LOCAL-00001" summary="默认的">
       <created>1639148789271</created>
@@ -391,7 +380,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641028749254</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="12">
+      <created>1641122250052</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1641122250052</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -420,7 +416,8 @@
     <MESSAGE value="1229" />
     <MESSAGE value="1231" />
     <MESSAGE value="happy new year" />
-    <option name="LAST_COMMIT_MESSAGE" value="happy new year" />
+    <MESSAGE value="12" />
+    <option name="LAST_COMMIT_MESSAGE" value="12" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Volunteers_Manage_System$Tomcat_9_0_54.ic" NAME="Tomcat 9.0.54 Coverage Results" MODIFIED="1639128213296" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

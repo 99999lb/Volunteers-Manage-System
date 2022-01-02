@@ -1,10 +1,7 @@
 package com.vms;
 
 import dao.*;
-import entity.Activity;
-import entity.Customer;
-import entity.JoinActs;
-import entity.Post;
+import entity.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,6 +19,7 @@ public class Servlet extends HttpServlet {
     ActivityDao actd=new ActivityDao();
     PostDao pd=new PostDao();
     JoinActsDao jd=new JoinActsDao();
+    ArticleDao atd=new ArticleDao();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
@@ -53,6 +51,10 @@ public class Servlet extends HttpServlet {
                     request.getSession().setAttribute("tid",tid);
                     ArrayList<Post> plist=pd.queryPostCheck();
                     request.getSession().setAttribute("plist",plist);
+                    ArrayList<Article> atclist=atd.queryNews();
+                    request.getSession().setAttribute("atclist",atclist);
+                    ArrayList<Article> paclist=atd.queryPacs();
+                    request.getSession().setAttribute("paclist",paclist);
                     response.sendRedirect("admin.jsp");//仅作为测试用例，非最终验证结果
                 }
                 else
@@ -250,6 +252,50 @@ public class Servlet extends HttpServlet {
                     response.sendRedirect("cacts.jsp?da=y");
                 else
                     response.sendRedirect("cacts.jsp?da=n");
+                break;
+
+            case "fina":
+                CID=(String) request.getSession().getAttribute("cid");
+                actid1=request.getParameter("finaid");
+                flag=actd.FinAct(actid1);
+
+                if(flag)
+                    if(flag) {
+                        actsbyid=actd.FindActivitiesByCID(CID);
+                        request.getSession().setAttribute("actsbyid",actsbyid);
+                        response.sendRedirect("cacts.jsp?da=fy");
+                    }
+                    else
+                        response.sendRedirect("cacts.jsp?da=fn");
+                break;
+
+            case "point":
+                CID=(String) request.getSession().getAttribute("cid");
+                actid1=request.getParameter("ptaid");
+                ArrayList<JoinActs> pointact=jd.ActivitiPoint(CID,actid1);
+                request.getSession().setAttribute("pointact",pointact);
+                response.sendRedirect("point.jsp");
+                break;
+
+            case "pa":
+                CID=(String) request.getSession().getAttribute("cid");
+                actid1= (String) request.getSession().getAttribute("ptaid");
+                float point= Float.parseFloat(request.getParameter("pointact"));
+                flag=false;
+
+                try {
+                    flag=jd.PointAct(CID,actid1,point);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+
+                if(flag){
+                    joinbyid=jd.JoinActivitiesByID(CID);
+                    request.getSession().setAttribute("joinbyid",joinbyid);
+                    response.sendRedirect("joinacts.jsp?pa=y");
+                }
+                else
+                    response.sendRedirect("joinacts.jsp?pa=n");
                 break;
 
             case "vact":

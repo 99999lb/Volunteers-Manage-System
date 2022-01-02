@@ -51,14 +51,13 @@
     var errorr='<%=request.getParameter("ra")%>';
     if(errorr=="p")
         alert("用户信息未通过审核！请之后重试！")
-
 </script>
 <body>
     <form method="post" action="postServlet">
         <input type="hidden" name="name" value="reply">
         <input type="hidden" name="tid" value="<%=tid%>">
         <table width="60%" border="0" class="hovertable" align="center">
-            <%out.print("<td><a href='main.jsp'>回主界面</a></td>");%>
+            <%out.print("<td><a href='post.jsp'>回上一页</a></td>");%>
         </table>
         <table width="60%" border="1" class="hovertable" align="center">
             <td style="text-align: center;width:100px;">${p.title}</td>
