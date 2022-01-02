@@ -9,6 +9,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/table-style.css">
     <title>Title</title>
     <%
         ArrayList<JoinActs> list= (ArrayList<JoinActs>) request.getSession().getAttribute("pointact");

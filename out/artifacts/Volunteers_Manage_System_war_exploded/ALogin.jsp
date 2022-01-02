@@ -9,6 +9,7 @@
 <html>
 <head>
     <title>管理员登录</title>
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <script>
     var error='<%=request.getParameter("errora")%>';
@@ -20,6 +21,7 @@
 <body>
 <form method="post" action="servelt">
     <input type="hidden" name="name" value="alogin">
+    <h1 style="text-align: center;color: aliceblue;">管理员登录</h1>
     <table align="center" border="0">
         <tr><td>用户名：</td><td><input type="text" name="an"></td><td></td></tr>
         <tr><td>密码：</td><td><input type="password" name="ap"></td></tr>

@@ -9,10 +9,13 @@
 <html>
 <head>
     <title>选择登录方式</title>
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
 <form name="login" method="post" action="servelt">
-    <table border="1" align="center" width="35%">
+    <h1 style="text-align: center;color: aliceblue;">选择登录方式</h1>
+    <table border="0" align="center" width="80%">
+
         <tr align="center">
             <td>
                 <a href='servelt?name=al'>管理员登录</a>

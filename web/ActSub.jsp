@@ -8,6 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/table-style.css">
     <title>发布活动</title>
     <script>
         var err='<%=request.getParameter("ec")%>';
@@ -17,6 +19,7 @@
     </script>
 </head>
 <body>
+<a href="acts.jsp">回上一页</a>
 <form action="netServlet" method="post">
     <input type="hidden" name="name" value="subact">
     <table border="1" align="center">

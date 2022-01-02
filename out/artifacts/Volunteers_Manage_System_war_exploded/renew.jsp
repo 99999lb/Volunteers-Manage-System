@@ -9,6 +9,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/table-style.css">
     <title>更新个人信息</title>
 </head>
 <script>
@@ -17,6 +19,7 @@
         alert("信息更新失败！请重试！")
 </script>
 <body>
+<a href="customer.jsp">回上一页</a>
 <form method="post" action="servelt">
     <input type="hidden" name="name" value="renew">
     <table border="1" align="center">

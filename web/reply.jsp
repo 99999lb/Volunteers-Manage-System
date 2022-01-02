@@ -14,6 +14,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/table-style.css">
     <title></title>
     <%
         String tid=(String) request.getSession().getAttribute("tid");
@@ -26,11 +28,22 @@
         ReplyDao rd=new ReplyDao();
         ArrayList<Reply> rlist=rd.queryReply(t);
 
-        String cid=(String) request.getSession().getAttribute("cid");
         CustomerDao cd=new CustomerDao();
-        Customer c=cd.queryCustomerByCID(cid);
-        if(c.getCname()==null) c.setCname("游客");
-        String cn=c.getCname();
+        String cn=null;
+        String cid=(String) request.getSession().getAttribute("cid");
+        String aid=(String) request.getSession().getAttribute("aid");
+        if(cid!=null){
+            Customer c=cd.queryCustomerByCID(cid);
+            cn=c.getCname();
+        }
+        else{
+            if(aid!=null){
+                cn="管理员"+aid;
+            }
+            else{
+                cn="游客";
+            }
+        }
         request.setAttribute("cn",cn);
     %>
 </head>
@@ -74,7 +87,7 @@
             <input type="hidden" name="tid" value="<%=tid%>">
             <tr>
                 <td>昵称</td>
-                <td><input type="text" name="cname" value="<%=cn%>"></td>
+                <td><input type="text" name="cn" value="<%=cn%>"></td>
             </tr>
             <tr>
                 <td>请输入你的答复</td>

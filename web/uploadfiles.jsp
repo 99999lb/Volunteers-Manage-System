@@ -8,6 +8,8 @@
 <%@ page contentType="text/html;charset=gb2312" pageEncoding="UTF-8" language="java" %>
 <html>
 <head>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/table-style.css">
     <title>Title</title>
 </head>
 <body>

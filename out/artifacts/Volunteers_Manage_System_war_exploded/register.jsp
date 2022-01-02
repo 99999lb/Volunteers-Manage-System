@@ -9,6 +9,7 @@
 <html>
 <head>
     <title>注册账号</title>
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <script>
     var error='<%=request.getParameter("errorR")%>';
@@ -19,8 +20,9 @@
 </script>
 <body>
     <form method="post" action="servelt">
+        <h1 style="text-align: center;color: aliceblue;">用户注册</h1>
         <input type="hidden" name="name" value="cregister">
-        <table border="1" align="center">
+        <table border="0" align="center">
             <tr>
                 <td>用户名</td>
                 <td><input type="text" name="cid"></td>

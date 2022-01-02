@@ -14,6 +14,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/table-style.css">
+    <link rel="stylesheet" href="css/basictable.css">
     <title>发布的帖子</title>
     <%
         String cid=(String) request.getSession().getAttribute("cid");

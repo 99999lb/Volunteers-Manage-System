@@ -36,9 +36,11 @@ public class postServlet extends HttpServlet {
 
         switch(name){
             case "addPost":
+                String pid=request.getParameter("pid");
+                String pname=request.getParameter("pname");
                 boolean pr=false;
                 try {
-                    pr=pd.addPost(cid,cname,title,tText);
+                    pr=pd.addPost(pid,pname,title,tText);
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
@@ -87,10 +89,17 @@ public class postServlet extends HttpServlet {
 
             case "reply":
                 request.getSession().setAttribute("tid",tid);
+                String cn=request.getParameter("cn");
+                System.out.println(cn);
                 Boolean rr=false;
                 try {
-                    if(rep!=null)
-                    rr=rd.addReply(Integer.parseInt(tid),cid,cname,rep);
+                    if(rep!=null){
+                        if(aid!=null){
+                            rr=rd.addReply(Integer.parseInt(tid),aid,cn,rep);}
+                        else{
+                            rr=rd.addReply(Integer.parseInt(tid),cid,cn,rep);
+                        }
+                    }
                 } catch (SQLException throwables) {
                 }
                     response.sendRedirect("reply.jsp");
@@ -98,17 +107,26 @@ public class postServlet extends HttpServlet {
 
 
             case "post":
+                System.out.print("cid"+cid);
+                System.out.print("aid"+aid);
                 if(aid==null&&cid==null){
                     System.out.println("post1");
                     response.sendRedirect("main.jsp?errorm=nologin");
                 }
                 else{
-                    if(!pass.trim().equals("Y")){
-                        System.out.println("post2.1");
-                        response.sendRedirect("post.jsp?pa=p");}
-                    else if(c.getCname()==null){
-                        System.out.println("post2.2");
-                        response.sendRedirect("customer.jsp?upd=update");
+                    if(cid!=null) {
+                        if (!pass.trim().equals("Y")) {
+                            System.out.println("post2.1");
+                            response.sendRedirect("post.jsp?pa=p");
+                        }
+                        else if(c.getCname()==null){
+                            System.out.println("post2.2");
+                            response.sendRedirect("customer.jsp?upd=update");
+                        }
+                        else{
+                            System.out.println("post2.3");
+                            response.sendRedirect("addPost.jsp");
+                        }
                     }
                     else{
                         System.out.println("post2.3");

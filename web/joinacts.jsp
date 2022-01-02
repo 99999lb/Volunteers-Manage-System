@@ -10,6 +10,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/table-style.css">
+    <link rel="stylesheet" href="css/basictable.css">
     <title>已参与活动</title>
     <%
         ArrayList<JoinActs> list= (ArrayList<JoinActs>) request.getSession().getAttribute("joinbyid");
