@@ -6,27 +6,12 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ee6a3ba-35fb-46c5-84e4-3de993c578b0" name="默认的" comment="12">
-      <change afterPath="$PROJECT_DIR$/src/com/vms/articleServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dao/ArticleDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/entity/Article.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/addnews.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/addpac.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/browse.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/news.jsp" afterDir="false" />
+    <list default="true" id="6ee6a3ba-35fb-46c5-84e4-3de993c578b0" name="默认的" comment="13">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/WEB-INF/classes/DBHelper/SQLHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/WEB-INF/classes/DBHelper/SQLHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/WEB-INF/classes/com/vms/Servlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Volunteers_Manage_System_war_exploded/WEB-INF/classes/com/vms/Servlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DBHelper/SQLHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBHelper/SQLHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/vms/Servlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/vms/Servlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/vms/netServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/vms/netServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/vms/postServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/vms/postServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/ActivityDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ActivityDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/draft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/draft.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/DBHelper/SQLHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/DBHelper/SQLHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/vms/Servlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/vms/Servlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/draft.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/draft.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/reply.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/reply.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -295,6 +280,8 @@
       <workItem from="1641134961561" duration="533000" />
       <workItem from="1641135528682" duration="6081000" />
       <workItem from="1641141838091" duration="2485000" />
+      <workItem from="1641145970531" duration="58000" />
+      <workItem from="1641170019285" duration="1301000" />
     </task>
     <task id="LOCAL-00001" summary="默认的">
       <created>1639148789271</created>
@@ -387,7 +374,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641122250052</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="13">
+      <created>1641145985947</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1641145985947</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -417,7 +411,8 @@
     <MESSAGE value="1231" />
     <MESSAGE value="happy new year" />
     <MESSAGE value="12" />
-    <option name="LAST_COMMIT_MESSAGE" value="12" />
+    <MESSAGE value="13" />
+    <option name="LAST_COMMIT_MESSAGE" value="13" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Volunteers_Manage_System$Tomcat_9_0_54.ic" NAME="Tomcat 9.0.54 Coverage Results" MODIFIED="1639128213296" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

@@ -51,6 +51,8 @@
     var errorr='<%=request.getParameter("ra")%>';
     if(errorr=="p")
         alert("用户信息未通过审核！请之后重试！")
+    else if(errorr=="dn")
+        alert("权限不够，不能删除")
 </script>
 <body>
     <form method="post" action="postServlet">

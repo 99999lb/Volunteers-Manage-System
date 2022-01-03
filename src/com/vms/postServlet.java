@@ -77,10 +77,14 @@ public class postServlet extends HttpServlet {
                         try {
                             System.out.println("deleter2.2");
                             rd.deleteReply(rid);
+                            response.sendRedirect("reply.jsp");
                         } catch (SQLException throwables) {
                             throwables.printStackTrace();
                         }
                     }
+                    else{
+                        response.sendRedirect("reply.jsp?ra=dn");
+                }
                 break;
 
             case "reply":
