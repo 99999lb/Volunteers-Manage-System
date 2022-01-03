@@ -12,7 +12,13 @@
       <change beforePath="$PROJECT_DIR$/src/DBHelper/SQLHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBHelper/SQLHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/vms/postServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/vms/postServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/DBHelper/SQLHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/DBHelper/SQLHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/reply.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/reply.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/acts.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/acts.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/nav.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/nav.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/customer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/customer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/downloadFiles.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/downloadFiles.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/news.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/news.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/post.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/post.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -281,7 +287,10 @@
       <workItem from="1641135528682" duration="6081000" />
       <workItem from="1641141838091" duration="2485000" />
       <workItem from="1641145970531" duration="58000" />
-      <workItem from="1641170019285" duration="1301000" />
+      <workItem from="1641170019285" duration="1513000" />
+      <workItem from="1641173040770" duration="2423000" />
+      <workItem from="1641178144040" duration="156000" />
+      <workItem from="1641178624191" duration="755000" />
     </task>
     <task id="LOCAL-00001" summary="默认的">
       <created>1639148789271</created>
@@ -381,7 +390,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641145985947</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="13">
+      <created>1641171577272</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1641171577272</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

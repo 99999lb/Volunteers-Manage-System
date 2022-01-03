@@ -54,7 +54,7 @@
             out.println("<a href='admin.jsp'>管理员中心"+aid+"</a>");
     %></li>
 </ul>
-<div style="margin-left:25%;padding:1px 16px;height:1000px;">
+<div style="margin-left:10%;padding:1px 16px;height:1000px;">
     <h1>论坛</h1>
 <form method="post" action="netServlet">
     <input type="hidden" name="name" value="forum">

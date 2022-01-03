@@ -4,6 +4,7 @@ import dao.CustomerDao;
 import dao.PostDao;
 import dao.ReplyDao;
 import entity.Customer;
+import entity.Post;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 @WebServlet(name = "postServlet",urlPatterns = "/postServlet")
 public class postServlet extends HttpServlet {
@@ -44,8 +46,11 @@ public class postServlet extends HttpServlet {
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
-                if(pr)
-                        response.sendRedirect("post.jsp?p=y");
+                if(pr) {
+                    response.sendRedirect("post.jsp?p=y");
+                    ArrayList<Post> plist=pd.queryPostCheck();
+                    request.getSession().setAttribute("plist",plist);
+                }
                 else
                         response.sendRedirect("post.jsp?p=n");
 
