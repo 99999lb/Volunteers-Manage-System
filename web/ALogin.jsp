@@ -25,6 +25,7 @@
     <table align="center" border="0">
         <tr><td>用户名：</td><td><input type="text" name="an"></td><td></td></tr>
         <tr><td>密码：</td><td><input type="password" name="ap"></td></tr>
+        <a href="Login.jsp">回上一页</a>
         <tr><td colspan="2" align="center"><input type="submit" value="登录"></td></tr>
     </table>
 </form>

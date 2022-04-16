@@ -58,7 +58,7 @@
         <li><a href="netServlet?name=forum">志愿者论坛</a></li>
         <li><a href="netServlet?name=pac">志愿者培训</a></li>
         <li><a href="netServlet?name=download">文件下载</a></li>
-        <li><%
+        <li><%//转向登录模块
             String cid= (String) request.getSession().getAttribute("cid");
             String aid= (String) request.getSession().getAttribute("aid");
             if(cid==null && aid==null)

@@ -88,7 +88,7 @@
             <input type="hidden" name="tid" value="<%=tid%>">
             <tr>
                 <td>昵称</td>
-                <td><input type="text" name="cn" value="<%=cn%>"></td>
+                <td><input type="text" name="cn" value="<%=cn%>" readonly="readonly"></td>
             </tr>
             <tr>
                 <td>请输入你的答复</td>

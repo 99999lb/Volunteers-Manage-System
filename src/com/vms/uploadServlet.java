@@ -62,6 +62,7 @@ public class uploadServlet extends HttpServlet {
                     count++;
                     file.saveAs("D:/upload/"+newFileName+"."+fileExt,su.SAVE_PHYSICAL);
                 }
+                response.sendRedirect("admin.jsp");
                 out.println("共有"+count+"个文件上传成功！");
             }
             else if("filedownload".equals(opttype)){

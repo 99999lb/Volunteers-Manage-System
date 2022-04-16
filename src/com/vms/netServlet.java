@@ -33,7 +33,7 @@ public class netServlet extends HttpServlet {
         boolean flag=false;
 
         switch (name){
-            case "acts":
+            case "acts"://转向志愿活动模块
                 ArrayList<Activity> passalist=ad.AllPassActivities();
                 request.getSession().setAttribute("passalist",passalist);
                 response.sendRedirect("acts.jsp");
@@ -143,7 +143,7 @@ public class netServlet extends HttpServlet {
                     response.sendRedirect("acts.jsp?ja=qn");
                 break;
 
-            case "news":
+            case "news"://转向新闻报道模块
                 ArrayList<Article> atclist=atd.queryNews();
                 request.getSession().setAttribute("atclist",atclist);
                 response.sendRedirect("news.jsp?n=n");
@@ -155,11 +155,11 @@ public class netServlet extends HttpServlet {
                 response.sendRedirect("news.jsp?n=p");
                 break;
 
-            case "forum":
+            case "forum"://转向志愿者论坛模块
                 response.sendRedirect("post.jsp");
                 break;
 
-            case "download":
+            case "download"://转向文件下载模块
                 response.sendRedirect("downloadFiles.jsp");
                 break;
         }

@@ -13,7 +13,7 @@
     <title>Title</title>
 </head>
 <body>
-            <a href="customer.jsp">回个人主页</a>
+<a href="admin.jsp">回上一页</a>
     <p align="center">上传文件选择</p>
     <form method="post" action="upload" ENCTYPE="multipart/form-data">
         <input type="hidden" name="opttype" value="fileupload">

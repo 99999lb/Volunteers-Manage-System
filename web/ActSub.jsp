@@ -1,10 +1,11 @@
-<%--
+<%@ page import="java.util.Random" %><%--
   Created by IntelliJ IDEA.
   User: Kuroen
   Date: 2021/12/13
   Time: 13:50
   To change this template use File | Settings | File Templates.
 --%>
+<%--团队用户发布活动填写信息--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -28,7 +29,13 @@
     <br><br>
     <table border="0" align="center">
         <tr><td>发起人账号：</td><td><input type="text" name="actcid" value="${cid}" readonly="readonly"></td></tr>
-        <tr><td>活动号：</td><td><input type="text" name="actid" maxlength="10"></td></tr>
+        <tr><td>活动号：</td><td><input type="text" name="actid" maxlength="10" readonly="readonly" value=<%
+            String num="";
+            for(int i=0;i<10;i++)
+                num+=new Random().nextInt(10);
+            out.println(num);
+        %>>
+        </td></tr>
         <tr><td>活动名：</td><td><input type="text" name="actn" style="width: 200px"></td></tr>
         <tr><td>活动类别：</td><td><select size="1" name="as">
             <option>探访老人</option>

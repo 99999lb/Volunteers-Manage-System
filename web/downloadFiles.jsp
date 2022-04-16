@@ -43,7 +43,6 @@
 </ul>
 <div style="margin-left:10%;padding:1px 16px;height:1000px;">
     <h1>文件下载</h1>
-    <a href="customer.jsp">回个人主页</a>
     <form method="post" action="netServlet">
         <input type="hidden" name="name" value="download">
         <table width="75%" border="1" align="center">

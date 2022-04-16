@@ -7,6 +7,7 @@
   Time: 16:34
   To change this template use File | Settings | File Templates.
 --%>
+<%--普通用户的已参加活动--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
